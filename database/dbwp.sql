@@ -1,0 +1,14 @@
+-- Active: 1775891342428@@localhost@3306@dbwp
+CREATE DATABASE IF NOT EXISTS dbwp;
+USE dbwp;
+
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nama_depan VARCHAR(50) NOT NULL,
+    nama_belakang VARCHAR(50) NOT NULL,
+    umur INT NOT NULL,
+    no_telp VARCHAR(20) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
