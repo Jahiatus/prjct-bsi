@@ -1,3 +1,2 @@
-# Project apa ni co
-Project Program Kuliah
-tai
+# Project Web Programming - Ombak Biru
+RUDAL ASLI NGAWI
