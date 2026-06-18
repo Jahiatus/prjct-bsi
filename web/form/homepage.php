@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ombak-Biru (Indonesia)</title>
     <link rel="icon" type="image/svg+xml" href="../img/Asset 10.svg">
+    <link rel="stylesheet" href="../css/test.css">
 </head>
 <body>
+    <?php include '../layout/hdr.html'; ?>
+    <main>
+        <!-- Content will go here -->
+         
+    </main>
     <form>
         
     </form>
