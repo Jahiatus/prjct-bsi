@@ -7,8 +7,9 @@
 }
 
 :root {
-    --primary-color: #0056b3;
-    --text-color: #333;
+    --primary-color: #05285D;
+    --secondary-color: #215092;
+    --text-color: #1e1e1e;
     --bg-color: #fff;
     --border-color: #eee;
     --header-height: 70px;
@@ -59,15 +60,45 @@ body {
     gap: 20px;
 }
 
-.nav-item {
+.nav-link {
+    position: relative;
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom: 2px;
+    display: inline-block;
+    transition: var(--secondary-color) 0.3s ease;
 }
 
-.nav-item:hover {
-    color: var(--primary-color);
+.nav-link::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+    background-color: var(--secondary-color);
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+.nav-link.active{
+    color: var(--secondary-color);
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
+
+.nav-link:active::after {
+    transform: scaleX(1);
 }
 
 /* Right Side - Notifications & Profile */
@@ -94,6 +125,12 @@ body {
 .icon-notification {
     width: 24px;
     height: 24px;
+}
+
+.vertical-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #e0e0e0;
 }
 
 .user-profile {
