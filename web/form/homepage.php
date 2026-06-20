@@ -10,7 +10,7 @@
 <body>
     <?php include '../layout/hdr.html'; ?>
     <main>
-        <!-- Content will go here -->        
+        <?php include '../layout/bdy.html'?>     
     </main>
     <?php include '../layout/ftr.html'?>
 </body>
