@@ -6,7 +6,7 @@
                 <img src="../img/Asset 7.svg" alt="Logo" width="100">
             </div>
             <nav class="nav-menu">
-                <a href="#" class="nav-link">Schedules</a>
+                <a href="#hero" class="nav-link">Schedules</a>
                 <a href="#" class="nav-link">Cek Booking</a>
             </nav>
         </div>
@@ -30,3 +30,33 @@
         </div>
     </div>
 </header>
+
+<!-- INTERACTIVE NAVIGATION SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function updateActiveLink() {
+      const currentHash = window.location.hash;
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentHash) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    window.addEventListener('hashchange', updateActiveLink);
+    if (window.location.hash) {
+      updateActiveLink();
+    }
+  });
+</script>

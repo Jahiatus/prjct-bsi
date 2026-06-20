@@ -6,6 +6,11 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
 :root {
     --primary-color: #05285D;
     --secondary-color: #215092;
@@ -89,8 +94,13 @@ body {
     color: var(--secondary-color);
 }
 
-.nav-link.active{
+/*.nav-link.active*/
+.nav-link.active {
     color: var(--secondary-color);
+}
+
+.nav-link.active::after {
+    transform: scaleX(1);
 }
 
 .nav-link:hover::after {
