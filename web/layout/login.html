@@ -1,109 +1,98 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Ombak Biru</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Ombak Biru</title>
 
-  <link rel="stylesheet" href="login.css">
-</head>
+    <link rel="stylesheet" href="login.css" />
+  </head>
 
-<body>
-  <main class="login-page">
+  <body>
+    <main class="login-page">
+      <section class="left-side">
+        <a href="bdy.html" class="back-btn">← Kembali</a>
 
-    <section class="left-side">
-      <a href="bdy.html" class="back-btn">← Kembali</a>
-
-      <div class="brand-content">
-        <div class="logo-wrap">
-          <div class="logo-icon">≈</div>
-
-          <div>
-            <h2>OMBAK BIRU</h2>
-            <p>JELAJAHI LAUT BERSAMA KAMI</p>
+        <div class="brand-content">
+          <div class="logo-wrap">
+            <img src="../img/Asset 10.svg" alt="Logo Ombak Biru" class="logo" />
           </div>
+          <h1>Perjalanan Laut yang Dapat Diandalkan.</h1>
+
+          <p class="description">
+            Masuk untuk melanjutkan pemesanan tiket kapal feri dengan lebih
+            mudah.
+          </p>
         </div>
+      </section>
 
-        <h1>Perjalanan Laut yang Dapat Diandalkan.</h1>
+      <section class="right-side">
+        <form class="login-card" action="#" method="post">
+          <h2>Selamat Datang</h2>
+          <p class="subtitle">Masuk ke akun Anda untuk melanjutkan.</p>
 
-        <p class="description">
-          Masuk untuk melanjutkan pemesanan tiket kapal feri dengan lebih mudah.
-        </p>
-      </div>
-    </section>
+          <div class="form-group">
+            <label for="email">Email</label>
 
-    <section class="right-side">
-      <form class="login-card" action="#" method="post">
-
-        <h2>Selamat Datang</h2>
-        <p class="subtitle">Masuk ke akun Anda untuk melanjutkan.</p>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-
-          <div class="input-box">
-            <span class="icon">✉</span>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="nama@email.com"
-              required
-            >
+            <div class="input-box">
+              <span class="icon">✉</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="nama@email.com"
+                required
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
+          <div class="form-group">
+            <label for="password">Password</label>
 
-          <div class="input-box">
-            <span class="icon">🔒</span>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Masukkan password"
-              required
-            >
+            <div class="input-box">
+              <span class="icon">🔒</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Masukkan password"
+                required
+              />
+            </div>
           </div>
-        </div>
 
-        <div class="login-option">
-          <label class="remember">
-            <input type="checkbox" name="remember">
-            <span>Ingat saya</span>
-          </label>
+          <div class="login-option">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              <span>Ingat saya</span>
+            </label>
 
-          <a href="#" class="forgot-password">Lupa password?</a>
-        </div>
+            <a href="#" class="forgot-password">Lupa password?</a>
+          </div>
 
-        <button type="submit" class="login-btn">
-          Masuk Sekarang →
-        </button>
+          <button type="submit" class="login-btn">Masuk Sekarang →</button>
 
-        <div class="divider">
-          <span>Atau masuk dengan</span>
-        </div>
+          <div class="divider">
+            <span>Atau masuk dengan</span>
+          </div>
 
-        <div class="social-login">
-          <button type="button" class="social-btn google-btn">
-            <span>G</span> Google
-          </button>
+          <div class="social-login">
+            <button type="button" class="social-btn google-btn">
+              <span>G</span> Google
+            </button>
 
-          <button type="button" class="social-btn discord-btn">
-            <span>◉</span> Discord
-          </button>
-        </div>
+            <button type="button" class="social-btn discord-btn">
+              <span>◉</span> Discord
+            </button>
+          </div>
 
-        <p class="register-text">
-          Belum punya akun?
-          <a href="daftar.html">Daftar di sini</a>
-        </p>
-
-      </form>
-    </section>
-
-  </main>
-</body>
+          <p class="register-text">
+            Belum punya akun?
+            <a href="daftar.html">Daftar di sini</a>
+          </p>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
 ```
