@@ -299,7 +299,7 @@ body {
   animation: scrollBanner 15s linear infinite;
 }
 
-.slides img {
+.slides {
   width: 100vw; /* 1 banner = 1 layar */
   height: auto;
   flex-shrink: 0;
