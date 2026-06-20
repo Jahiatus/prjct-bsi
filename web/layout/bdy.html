@@ -1,37 +1,21 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Ombak Biru</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="bjir.css" />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
+    <link rel="stylesheet" href="../css/bdy.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <section class="banner-slider">
     <div class="slides">
-
-        <img src="1.png" alt="Banner 1">
-        <img src="2.png" alt="Banner 2">
-        <img src="1.png" alt="Banner 1">
-        <img src="2.png" alt="Banner 2">
-
+      <div class="slide">
+        <img src="../img/1.png" alt="Banner 1">
+      </div>
+      <div class="slide">
+        <img src="../img/2.png" alt="Banner 2">
+      </div>
+      <div class="slide">
+        <img src="../img/1.png" alt="Banner 1">
+      </div>
     </div>
-</section>
+  </section>
     <div class="container">
       <!-- HERO -->
       <section class="hero">
@@ -46,85 +30,138 @@
       <!-- BOOKING CARD -->
       <section class="booking-card">
         <div class="tabs">
-          <div class="tab active">
+          <div class="tab active" data-tab="penumpang">
             <i class="fa-solid fa-ship"></i>
             Penumpang & Kendaraan
           </div>
 
-          <div class="tab">
+          <div class="tab" data-tab="pengiriman">
             <i class="fa-solid fa-truck"></i>
             Pengiriman Barang
           </div>
         </div>
 
-        <div class="form-grid">
-          <div class="form-group">
-            <label>Asal</label>
-            <select>
-              <option>Pelabuhan Merak, Banten</option>
-              <option>Pelabuhan Bakauheni, Lampung</option>
-              <option>Pelabuhan Ketapang, Banyuwangi</option>
-              <option>Pelabuhan Gilimanuk, Bali</option>
-            </select>
+        <!-- content for Penumpang & Kendaraan -->
+        <div id="penumpang-form-content">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Asal</label>
+              <select>
+                <option>Pelabuhan Merak, Banten</option>
+                <option>Pelabuhan Bakauheni, Lampung</option>
+                <option>Pelabuhan Ketapang, Banyuwangi</option>
+                <option>Pelabuhan Gilimanuk, Bali</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Tujuan</label>
+              <select>
+                <option>Pelabuhan Bakauheni, Lampung</option>
+                <option>Pelabuhan Merak, Banten</option>
+                <option>Pelabuhan Ketapang, Banyuwangi</option>
+                <option>Pelabuhan Gilimanuk, Bali</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Tanggal Keberangkatan</label>
+              <input type="date" />
+            </div>
+
+            <div class="form-group">
+              <label>Kelas Layanan</label>
+              <select>
+                <option>Eksekutif</option>
+                <option>Reguler</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Dewasa</label>
+              <input type="number" value="1" min="1" />
+            </div>
+
+            <div class="form-group">
+              <label>Anak</label>
+              <input type="number" value="0" min="0" />
+            </div>
           </div>
 
-          <div class="form-group">
-            <label>Tujuan</label>
-            <select>
-              <option>Pelabuhan Bakauheni, Lampung</option>
-              <option>Pelabuhan Merak, Banten</option>
-              <option>Pelabuhan Ketapang, Banyuwangi</option>
-              <option>Pelabuhan Gilimanuk, Bali</option>
-            </select>
+          <div class="vehicle-list">
+            <button class="vehicle active">
+              <i class="fa-solid fa-person"></i>
+              Pejalan Kaki
+            </button>
+
+            <button class="vehicle">
+              <i class="fa-solid fa-motorcycle"></i>
+              Motor
+            </button>
+
+            <button class="vehicle">
+              <i class="fa-solid fa-car"></i>
+              Mobil
+            </button>
+
+            <button class="vehicle">
+              <i class="fa-solid fa-truck"></i>
+              Truk / Bus
+            </button>
           </div>
 
-          <div class="form-group">
-            <label>Tanggal Keberangkatan</label>
-            <input type="date" />
-          </div>
-
-          <div class="form-group">
-            <label>Kelas Layanan</label>
-            <select>
-              <option>Eksekutif</option>
-              <option>Reguler</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Dewasa</label>
-            <input type="number" value="1" />
-          </div>
-
-          <div class="form-group">
-            <label>Anak</label>
-            <input type="number" value="0" />
-          </div>
+          <button class="search-btn">Cari Jadwal Feri →</button>
         </div>
 
-        <div class="vehicle-list">
-          <button class="vehicle active">
-            <i class="fa-solid fa-person"></i>
-            Pejalan Kaki
-          </button>
+        <!-- content for Pengiriman Barang -->
+        <div id="pengiriman-form-content" style="display: none;">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nama Pengirim</label>
+              <input type="text" placeholder="Masukkan nama pengirim" />
+            </div>
 
-          <button class="vehicle">
-            <i class="fa-solid fa-motorcycle"></i>
-            Motor
-          </button>
+            <div class="form-group">
+              <label>Nama Barang</label>
+              <input type="text" placeholder="Masukkan nama barang" />
+            </div>
 
-          <button class="vehicle">
-            <i class="fa-solid fa-car"></i>
-            Mobil
-          </button>
+            <div class="form-group">
+              <label>Berat (kg)</label>
+              <input type="number" value="1" min="1" placeholder="Berat dalam kg" />
+            </div>
 
-          <button class="vehicle">
-            <i class="fa-solid fa-truck"></i>
-            Truk / Bus
-          </button>
+            <div class="form-group">
+              <label>Kelas Layanan</label>
+              <select>
+                <option>Eksekutif</option>
+                <option>Reguler</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Asal</label>
+              <select>
+                <option>Pelabuhan Merak, Banten</option>
+                <option>Pelabuhan Bakauheni, Lampung</option>
+                <option>Pelabuhan Ketapang, Banyuwangi</option>
+                <option>Pelabuhan Gilimanuk, Bali</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Tujuan</label>
+              <select>
+                <option>Pelabuhan Bakauheni, Lampung</option>
+                <option>Pelabuhan Merak, Banten</option>
+                <option>Pelabuhan Ketapang, Banyuwangi</option>
+                <option>Pelabuhan Gilimanuk, Bali</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="search-btn" style="margin-top: 30px;">Cari Layanan Pengiriman →</button>
         </div>
-
-        <button class="search-btn">Cari Jadwal Feri →</button>
       </section>
 
       <!-- PROMO -->
@@ -211,5 +248,42 @@
         </div>
       </section>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tab Selector Switcher
+        const tabs = document.querySelectorAll('.tab');
+        const penumpangContent = document.getElementById('penumpang-form-content');
+        const pengirimanContent = document.getElementById('pengiriman-form-content');
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            tab.classList.add('active');
+
+            // Switch form content based on selected tab data-tab
+            const selectedTab = tab.getAttribute('data-tab');
+            if (selectedTab === 'penumpang') {
+              penumpangContent.style.display = 'block';
+              pengirimanContent.style.display = 'none';
+            } else if (selectedTab === 'pengiriman') {
+              penumpangContent.style.display = 'none';
+              pengirimanContent.style.display = 'block';
+            }
+          });
+        });
+
+        // Vehicle Selector Switcher (Penumpang Form)
+        const vehicles = document.querySelectorAll('.vehicle');
+        vehicles.forEach(vehicle => {
+          vehicle.addEventListener('click', () => {
+            vehicles.forEach(v => v.classList.remove('active'));
+            vehicle.classList.add('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -28,12 +28,12 @@ body {
 
 .slides {
   display: flex;
-  width: 200%;
+  width: 300%;
   animation: slideBanner 8s infinite;
 }
 
 .slide {
-  width: 100%;
+  width: 33.3333%;
   flex-shrink: 0;
 }
 
@@ -51,20 +51,20 @@ body {
     transform: translateX(0);
   }
 
-  45% {
+  40% {
     transform: translateX(0);
   }
 
   50% {
-    transform: translateX(-50%);
+    transform: translateX(-33.3333%);
   }
 
-  95% {
-    transform: translateX(-50%);
+  90% {
+    transform: translateX(-33.3333%);
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateX(-66.6666%);
   }
 }
 
@@ -288,32 +288,6 @@ body {
 }
 
 /* RESPONSIVE */
-.banner-slider {
-  width: 100%;
-  overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  width: max-content;
-  animation: scrollBanner 15s linear infinite;
-}
-
-.slides {
-  width: 100vw; /* 1 banner = 1 layar */
-  height: auto;
-  flex-shrink: 0;
-  display: block;
-}
-
-@keyframes scrollBanner {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-200vw);
-  }
-}
 @media (max-width: 992px) {
   .form-grid {
     grid-template-columns: repeat(2, 1fr);
