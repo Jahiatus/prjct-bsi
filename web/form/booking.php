@@ -1,32 +1,17 @@
-<form action="jadwal.php">
-
-
-<select name="asal">
-
-<option>
-Pelabuhan Merak
-</option>
-
-</select>
-
-
-<select name="tujuan">
-
-<option>
-Bakauheni
-</option>
-
-</select>
-
-
-<input 
-type="date"
-name="tanggal">
-
-
-<button>
-Cari Jadwal
-</button>
-
-
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Booking</title>
+    <link rel="icon" type="image/svg+xml" href="../img/Asset 10.svg">
+    <link rel="stylesheet" href="../css/test.css">
+</head>
+<body>
+    <?php include '../layout/hdr.html'; ?>
+    <main>
+        <?php include '../layout/cekbook.html'?>     
+    </main>
+    <?php include '../layout/ftr.html'?>
+</body>
+</html>
