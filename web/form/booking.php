@@ -10,7 +10,7 @@
 <body>
     <?php include '../layout/hdr.html'; ?>
     <main>
-        <?php include '../layout/cekbook.html'?>     
+           
     </main>
     <?php include '../layout/ftr.html'?>
 </body>

@@ -7,7 +7,7 @@
             </div>
             <nav class="nav-menu">
                 <a href="#hero" class="nav-link">Schedules</a>
-                <a href="#" class="nav-link">Cek Booking</a>
+                <a href="../form/booking.php" class="nav-link">Cek Booking</a>
             </nav>
         </div>
 
@@ -36,10 +36,9 @@
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-link');
     
-    function updateActiveLink() {
-      const currentHash = window.location.hash;
+    function setActive(activeLink) {
       navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentHash) {
+        if (link === activeLink) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
@@ -47,16 +46,35 @@
       });
     }
 
+    // Set default active on load
+    let defaultActive = navLinks[0]; // 'Schedules' is the first link
+    const currentHash = window.location.hash;
+    if (currentHash) {
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentHash) {
+          defaultActive = link;
+        }
+      });
+    }
+    setActive(defaultActive);
+
+    // Click handler to set active state immediately
     navLinks.forEach(link => {
       link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
+        setActive(this);
       });
     });
 
-    window.addEventListener('hashchange', updateActiveLink);
-    if (window.location.hash) {
-      updateActiveLink();
-    }
+    // Hash change handler to keep state in sync
+    window.addEventListener('hashchange', function () {
+      const newHash = window.location.hash;
+      if (newHash) {
+        navLinks.forEach(link => {
+          if (link.getAttribute('href') === newHash) {
+            setActive(link);
+          }
+        });
+      }
+    });
   });
 </script>
