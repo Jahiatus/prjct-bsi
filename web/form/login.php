@@ -1,4 +1,3 @@
--- Active: 1775891342428@@localhost@3306@dbwp
 <?php
 session_start();
 include "../../database/koneksi.php";
