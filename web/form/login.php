@@ -101,13 +101,12 @@ WHERE email='$email'"
                         <span>◉</span> Discord
                     </button>
                 </div>
-
                 <p class="register-text">
-                    Belum punya akun?
-                    <a href="daftar.html">Daftar di sini</a>
+                    Belum punya akun? <a href="daftar.html">Daftar di sini</a>
                 </p>
             </form>
         </section>
     </main>
 </body>
+
 </html>
