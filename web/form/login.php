@@ -1,27 +1,25 @@
+-- Active: 1775891342428@@localhost@3306@dbwp
 <?php
 session_start();
-include "config/koneksi.php";
+include "../../database/koneksi.php";
 if (isset($_POST['login'])) {
-    $email = $_POST['email'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
-    $data = mysqli_query(
-        $conn,
-        "SELECT * FROM users 
-WHERE email='$email'"
-    );
-    $user = mysqli_fetch_assoc($data);
-    if (
-        password_verify(
-            $password,
-            $user['password']
-        )
-    ) {
-        $_SESSION['user'] = $user['id'];
-        header(
-            "location:dashboard.php"
-        );
+    
+    $data = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
+    
+    if ($data && mysqli_num_rows($data) > 0) {
+        $user = mysqli_fetch_assoc($data);
+        
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['user'] = $user['id'];
+            header("Location: ../form/homepage.php"); 
+            exit(); 
+        } else {
+            echo "Login gagal: Password salah.";
+        }
     } else {
-        echo "Login gagal";
+        echo "Login gagal: Email tidak terdaftar.";
     }
 }
 ?>
