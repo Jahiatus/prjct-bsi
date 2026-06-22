@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 <body>
     <main class="login-page">
         <section class="left-side">
-            <a href="bdy.html" class="back-btn">← Kembali</a>
+            <a href="../form/homepage.php" class="back-btn">← Kembali</a>
 
             <div class="brand-content">
                 <div class="logo-wrap">

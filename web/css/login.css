@@ -28,7 +28,7 @@ body {
       rgba(0, 90, 145, 0.1),
       rgba(0, 42, 96, 0.35)
     ),
-    url("login.png");
+    url("../img/kapal.jpg");
 
   background-size: cover;
   background-position: center;
