@@ -99,7 +99,7 @@ if (isset($_POST['login'])) {
                     </button>
                 </div>
                 <p class="register-text">
-                    Belum punya akun? <a href="daftar.html">Daftar di sini</a>
+                    Belum punya akun? <a href="daftar.php">Daftar di sini</a>
                 </p>
             </form>
         </section>

@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root"; 
 $password = "";  
-$database = "dbwp.sql"; // nama database, bukan file .sql
+$database = "dbwp"; 
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
