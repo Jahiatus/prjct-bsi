@@ -6,11 +6,18 @@
     <title>Ombak Biru - Solusi Transportasi Bahari Anda</title>
     <link rel="icon" type="image/svg+xml" href="../img/Asset 10.svg">
 </head>
+
 <body>
+
     <?php include '../layout/hdr.html'; ?>
-    <main>
-        <?php include '../layout/bdy.html'?>     
-    </main>
-    <?php include '../layout/ftr.html'?>
+
+<main>
+    <?php include '../layout/bdy.html'; ?>
+
+    <?php include '../layout/komen.html'; ?>
+</main>
+
+<?php include '../layout/ftr.html'; ?>
+
 </body>
 </html>
