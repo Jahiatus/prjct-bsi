@@ -22,7 +22,7 @@ body {
 
 .banner-slider {
   width: 100%;
-  height: 400px;
+  height: auto;
   overflow: hidden;
   position: relative;
 }
@@ -30,7 +30,7 @@ body {
 .slides {
   display: flex;
   width: 300%;
-  height: 100%;
+  height: auto;
   animation: slideBanner 12s infinite;
 }
 
