@@ -9,15 +9,12 @@
 
 <body>
 
-    <?php include '../layout/hdr.html'; ?>
+<?php include __DIR__ . '/../layout/hdr.html'; ?>
 
 <main>
-    <?php include '../layout/bdy.html'; ?>
-
-    <?php include '../layout/komen.html'; ?>
+    <?php include __DIR__ . '/../layout/bdy.html'; ?>
 </main>
 
-<?php include '../layout/ftr.html'; ?>
-
+<?php include __DIR__ . '/../layout/ftr.html'; ?>
 </body>
 </html>
