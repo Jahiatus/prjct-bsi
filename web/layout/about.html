@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Tentang Ombak Biru</title>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ombak Biru</title>
+
+    <title>Tentang Ombak Biru</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS -->
     <link rel="stylesheet" href="../css/about.css" />
     <!-- Font Awesome -->
@@ -24,134 +22,95 @@
   </head>
   <body>
     <section class="about-section">
-      <div>
-        <h1>Tentang Ombak Biru</h1>
+      <h1>Tentang Ombak Biru</h1>
+    </section>
+
+    <section class="container">
+      <img src="../img/pelni.jpg" alt="Kapal Pelni" />
+
+      <div class="content">
+        <h1>Eksplorasi Laut Nusantara.</h1>
+
+        <p>
+          Pesan tiket feri dan pengiriman logistik dengan aman, cepat, dan
+          transparan bersama Ombak Biru.
+        </p>
+
+        <a href="booking.html" class="btn"> Lihat Info Jadwal </a>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="why-container">
+        <div class="why-us-content">
+          <h1>Mengapa Memilih Ombak Biru?</h1>
+
+          <a href="booking.html" class="btn"> Pesan Tiket </a>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-ship"></i>
+
+            <h2>Berpengalaman</h2>
+
+            <p>Memberikan layanan perjalanan laut dengan standar terbaik.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h2>Aman</h2>
+
+            <p>Keselamatan dan kenyamanan pelanggan menjadi prioritas utama.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-route"></i>
+
+            <h2>Jangkauan Luas</h2>
+
+            <p>Menghubungkan berbagai wilayah Indonesia melalui jalur laut.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="container">
-      <img src="../img/pelni.jpg" alt="pelni" />
-      <div class="content">
-        <h1>Eksplorasi Laut Nusantara.</h1>
-  <link rel="stylesheet" href="about.css">
+      <img src="../img/pelni.jpg" alt="Kapal" />
 
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <button href="#" class="btn">Lihat Info Jadwal</button>
+      <div class="content">
+        <h1>Mengenal Ombak Biru</h1>
+
+        <p>
+          Ombak Biru merupakan layanan transportasi laut yang hadir untuk
+          memberikan kemudahan perjalanan dan pengiriman logistik antar wilayah
+          Indonesia.
+        </p>
+
+        <p>
+          Kami berkomitmen memberikan layanan yang aman, nyaman, terpercaya
+          serta mendukung konektivitas laut Nusantara.
+        </p>
+
+        <a href="booking.html" class="btn"> Lihat Info Jadwal </a>
       </div>
     </section>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-            <div class="why-us-content">
-                <h1>Mengapa Memilih Ombak Biru?</h1>
-                <a href="bdy.html" class="btn">Pesan Tiket</a>
-            </div>
+    <!-- Script -->
 
-<body>
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
 
-<section class="hero">
-  <h1>Tentang Ombak Biru</h1>
-</section>
+      window.addEventListener("scroll", () => {
+        reveals.forEach((el) => {
+          let top = el.getBoundingClientRect().top;
 
-
-<section class="about reveal">
-
-  <img src="pelni.jpg" alt="kapal">
-
-  <div class="about-text">
-
-    <h1>Mengenal Ombak Biru</h1>
-
-    <p>
-      Ombak Biru merupakan layanan transportasi laut yang hadir untuk
-      memberikan kemudahan perjalanan dan pengiriman logistik antarwilayah
-      Indonesia.
-    </p>
-
-    <p>
-      Kami berkomitmen memberikan layanan yang aman, nyaman, terpercaya,
-      serta mendukung konektivitas laut Nusantara dengan pelayanan terbaik.
-    </p>
-
-    <button>
-      Lihat Info Jadwal
-    </button>
-
-  </div>
-
-</section>
-
-
-
-<section class="why reveal">
-
-<h1>Mengapa Memilih Ombak Biru?</h1>
-
-
-<div class="cards">
-
-
-<div class="card">
-<i class="fa-solid fa-ship"></i>
-<h2>Berpengalaman</h2>
-<p>
-Memberikan layanan perjalanan laut dengan standar terbaik.
-</p>
-</div>
-
-
-
-<div class="card">
-<i class="fa-solid fa-shield-halved"></i>
-<h2>Aman</h2>
-<p>
-Keselamatan dan kenyamanan pelanggan menjadi prioritas utama.
-</p>
-</div>
-
-
-
-<div class="card">
-<i class="fa-solid fa-route"></i>
-<h2>Jangkauan Luas</h2>
-<p>
-Menghubungkan berbagai wilayah Indonesia melalui jalur laut.
-</p>
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<script>
-
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", ()=>{
-
-reveals.forEach((el)=>{
-
-let windowHeight = window.innerHeight;
-
-let top = el.getBoundingClientRect().top;
-
-
-if(top < windowHeight - 100){
-
-el.classList.add("active");
-
-}
-
-})
-
-})
-
-</script>
-
-
+          if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
