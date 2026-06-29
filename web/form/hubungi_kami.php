@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombak Biru - Solusi Transportasi Bahari Anda</title>
+    <link rel="icon" type="image/svg+xml" href="../img/Asset 10.svg">
+</head>
 
-    <title>Hubungi Kami</title>
+<body>
 
-    <link rel="stylesheet" href="../css/form.css" />
+<?php include __DIR__ . '/../layout/hdr.html'; ?>
 
-    <!-- File validasi Zoho -->
-    <script src="validation.js"></script>
-  </head>
-
-  <body>
+<main>
+<body>
+    
+<link rel="stylesheet" href="../css/form.css" />
     <section id="contact-us">
       <div class="card">
         <h2 class="card-title">Hubungi Kami</h2>
@@ -123,37 +125,9 @@
         </form>
       </div>
     </section>
-
-    <!-- Script Zoho -->
-    <script type="text/javascript">
-      var dateAndMonthRegexFormateArray =
-        zf_SetDateAndMonthRegexBasedOnDateFormate("dd-MMM-yyyy");
-
-      var zf_DateRegex = new RegExp(dateAndMonthRegexFormateArray[0]);
-
-      var zf_MonthYearRegex = new RegExp(dateAndMonthRegexFormateArray[1]);
-
-      var zf_MandArray = [
-        "Name_First",
-        "Name_Last",
-        "Email",
-        "PhoneNumber_countrycode",
-        "Dropdown",
-        "MultiLine",
-      ];
-
-      var zf_FieldArray = [
-        "Name_First",
-        "Name_Last",
-        "Email",
-        "PhoneNumber_countrycode",
-        "Radio",
-        "Dropdown",
-        "MultiLine",
-      ];
-
-      var isSalesIQIntegrationEnabled = false;
-      var salesIQFieldsArray = [];
-    </script>
   </body>
+</main>
+
+<?php include __DIR__ . '/../layout/ftr.html'; ?>
+</body>
 </html>
