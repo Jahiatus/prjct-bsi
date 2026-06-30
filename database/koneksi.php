@@ -1,12 +1,23 @@
 <?php
+
 $host = "localhost";
 $username = "root"; 
 $password = "";  
 $database = "dbwp"; 
 
-$conn = mysqli_connect($host, $username, $password, $database);
 
-if (!$conn) {
+$koneksi = mysqli_connect(
+    $host,
+    $username,
+    $password,
+    $database
+);
+
+
+if (!$koneksi) {
+
     die("Koneksi database gagal: " . mysqli_connect_error());
+
 }
+
 ?>
