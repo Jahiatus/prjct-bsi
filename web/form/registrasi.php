@@ -34,8 +34,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $query = mysqli_query($koneksi,
 
+
         "INSERT INTO users
-        (nama_depan, nama_belakang, umur, no_telp, email, password, created_at)
+        (nama_depan,nama_belakang,umur,no_telp,email,password,created_at)
 
         VALUES
 
@@ -52,14 +53,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if($query){
 
+
             echo "<script>
             alert('Registrasi berhasil!');
             window.location='login.php';
             </script>";
 
-        } else {
+
+        }else{
+
 
             echo "Registrasi gagal";
+
 
         }
 
@@ -105,7 +110,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <section class="left-side">
 
 
-
 <a href="login.php" class="back-btn">
 ← Kembali
 </a>
@@ -115,12 +119,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="brand-content">
 
 
-
 <div class="logo-wrap">
 
 
 <img src="../img/Asset 10.svg"
-alt="Logo Ombak Biru"
 class="logo">
 
 
@@ -145,9 +147,7 @@ Daftar akun untuk melakukan pemesanan tiket kapal feri dengan lebih mudah.
 </div>
 
 
-
 </section>
-
 
 
 
@@ -184,15 +184,15 @@ Nama Depan
 
 <div class="input-box">
 
-<input
+<input 
 type="text"
 name="nama_depan"
 required>
 
 </div>
 
-
 </div>
+
 
 
 
@@ -207,15 +207,15 @@ Nama Belakang
 
 <div class="input-box">
 
-<input
+<input 
 type="text"
 name="nama_belakang"
 required>
 
 </div>
 
-
 </div>
+
 
 
 
@@ -230,15 +230,15 @@ Umur
 
 <div class="input-box">
 
-<input
+<input 
 type="number"
 name="umur"
 required>
 
 </div>
 
-
 </div>
+
 
 
 
@@ -253,15 +253,15 @@ Nomor Telepon
 
 <div class="input-box">
 
-<input
+<input 
 type="text"
 name="no_telp"
 required>
 
 </div>
 
-
 </div>
+
 
 
 
@@ -276,22 +276,26 @@ Email
 
 <div class="input-box">
 
-<input
+
+<input 
 type="email"
 name="email"
 placeholder="nama@email.com"
 required>
 
+
+</div>
+
 </div>
 
 
-</div>
 
 
 
 
 
 <div class="form-group">
+
 
 <label>
 Password
@@ -300,16 +304,18 @@ Password
 
 <div class="input-box">
 
+
 <input
 type="password"
 name="password"
 placeholder="Masukkan password"
 required>
 
-</div>
-
 
 </div>
+
+</div>
+
 
 
 
@@ -320,6 +326,8 @@ required>
 Daftar Sekarang →
 
 </button>
+
+
 
 
 
@@ -337,15 +345,18 @@ Atau daftar dengan
 
 
 
+
 <div class="social-login">
 
 
-<button type="button" class="social-btn google-btn">
+<button 
+type="button"
+id="googleLogin"
+class="social-btn google-btn">
 
 
-<span>
-G
-</span>
+<img src="../img/google.png" width="18">
+
 
 Google
 
@@ -360,9 +371,13 @@ Google
 
 
 
+
+
 <p class="register-text">
 
+
 Sudah punya akun?
+
 
 <a href="login.php">
 Login
@@ -382,7 +397,13 @@ Login
 
 
 
+
 </main>
+
+
+
+
+<script type="module" src="../js/firebase.js"></script>
 
 
 
