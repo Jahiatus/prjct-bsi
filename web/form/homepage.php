@@ -6,14 +6,13 @@
     <title>Ombak Biru - Solusi Transportasi Bahari Anda</title>
     <link rel="icon" type="image/svg+xml" href="../img/Asset 10.svg">
 </head>
-
+<link rel="stylesheet" href="../css/bdy.css" />
 <body>
 
-<?php include __DIR__ . '/../layout/hdr.html'; ?>
+<?php include __DIR__ . "../layout/hdr.html"; ?>
 
 <main>
-<body>
-<link rel="stylesheet" href="../css/bdy.css" />
+
     <section class="banner-slider">
       <div class="slides">
         <div class="slide">
@@ -311,7 +310,6 @@
         });
       });
     </script>
-  </body>
 </main>
 
 <?php include __DIR__ . '/../layout/ftr.html'; ?>
