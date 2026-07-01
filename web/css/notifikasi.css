@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Inter",sans-serif;
+}
+
+
+
+body{
+
+    background:#f5f7fa;
+
+}
+
+
+
+.notif-container{
+
+    width:90%;
+    max-width:600px;
+
+    margin:50px auto;
+
+}
+
+
+
+.notif-container h2{
+
+    font-size:28px;
+    color:#152432;
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+
+.notif-card{
+
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:15px;
+
+
+    border:1px solid #d8e0ea;
+
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+
+
+}
+
+
+
+.notif-card h3{
+
+
+    color:#087bc1;
+
+    font-size:18px;
+
+    margin-bottom:8px;
+
+
+
+}
+
+
+
+.notif-card p{
+
+
+    color:#555;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+
+
+}
+
+
+
+.notif-card small{
+
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#999;
+
+    font-size:12px;
+
+
+}
+
+
+
+/* kalau belum ada notif */
+
+
+.empty-notif{
+
+
+    background:white;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:12px;
+
+    color:#777;
+
+
+}
+/* NOTIFICATION DROPDOWN */
+
+.notification-wrapper{
+    position:relative;
+}
+
+
+.notification-btn{
+
+    background:none;
+    border:none;
+    cursor:pointer;
+
+}
+
+
+.icon-notification{
+
+    width:24px;
+
+}
+
+
+
+.notif-box{
+
+
+    display:none;
+
+    position:absolute;
+
+    right:0;
+
+    top:40px;
+
+
+    width:330px;
+
+
+    background:white;
+
+
+    border-radius:12px;
+
+
+    padding:15px;
+
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+
+    z-index:999;
+
+
+}
+
+
+
+.notif-box.show{
+
+    display:block;
+
+}
+
+
+
+.notif-box h3{
+
+    font-size:18px;
+
+    margin-bottom:15px;
+
+    color:#152432;
+
+}
+
+
+
+
+.notif-item{
+
+
+    padding:12px 0;
+
+
+    border-bottom:1px solid #eee;
+
+
+}
+
+
+
+.notif-item b{
+
+    color:#087bc1;
+
+    font-size:14px;
+
+
+}
+
+
+
+.notif-item p{
+
+    font-size:13px;
+
+    color:#555;
+
+    margin-top:5px;
+
+
+}
+
+
+
+.notif-item small{
+
+    font-size:11px;
+
+    color:#999;
+
+
+}
+
+
+
+.empty-notif{
+
+
+    text-align:center;
+
+    color:#777;
+
+    font-size:13px;
+
+
+}
