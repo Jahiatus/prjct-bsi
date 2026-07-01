@@ -33,7 +33,7 @@
 
         <p>
           Pesan tiket feri dan pengiriman logistik dengan aman, cepat, dan
-          transparan bersama SeaLink.
+          transparan bersama Ombak Biru.
         </p>
       </section>
 
