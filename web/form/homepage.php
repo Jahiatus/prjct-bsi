@@ -120,7 +120,7 @@
             </button>
           </div>
 
-          <button class="search-btn">Cari Jadwal Feri</button>
+          <button class="search-btn" href="/form/jadwal.php">Cari Jadwal Feri</button>
         </div>
 
         <!-- content for Pengiriman Barang -->
