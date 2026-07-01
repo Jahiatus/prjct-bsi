@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../css/bdy.css" />
 <body>
 
-<?php include __DIR__ . "../layout/hdr.html"; ?>
+<?php include __DIR__ . "header.php"; ?>
 
 <main>
 
