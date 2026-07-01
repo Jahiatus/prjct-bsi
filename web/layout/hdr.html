@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../css/header.css" />
 
 <header class="main-header">
+<<<<<<< HEAD
   <div class="header-container">
     <div class="header-left">
       <div class="logo">
@@ -13,11 +14,32 @@
         <a href="../form/homepage.php#hero" class="nav-link"> Schedules </a>
 
         <a href="../form/cekbooking.php" class="nav-link"> Cek Booking </a>
+=======
+
+    <div class="header-container">
+
+
+        <div class="header-left">
+
+
+            <div class="logo">
+
+                <a href="../form/homepage.php">
+
+                    <img src="../img/Asset 7.svg" 
+                    alt="Logo" 
+                    width="100">
+
+                </a>
+
+            </div>
+>>>>>>> b1456c5ca19ea456f438fdb34105b8eb8d25adb2
 
         <a href="../form/booking.php" class="nav-link"> Booking </a>
       </nav>
     </div>
 
+<<<<<<< HEAD
     <div class="header-right">
       <div class="notification-wrapper">
         <button class="notification-btn">
@@ -48,6 +70,141 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+=======
+
+            <nav class="nav-menu">
+
+
+                <a href="../form/homepage.php#hero" class="nav-link">
+                    Schedules
+                </a>
+
+
+                <a href="../form/cekbooking.php" class="nav-link">
+                    Cek Booking
+                </a>
+
+
+                <a href="../form/booking.php" class="nav-link">
+                    Booking
+                </a>
+
+
+            </nav>
+
+
+        </div>
+
+
+
+
+
+        <div class="header-right">
+
+
+
+            <!-- NOTIFIKASI -->
+
+            <div class="notification-wrapper">
+
+
+                <a href="../form/notifikasi.php" 
+                class="notification-btn">
+
+
+                    <img 
+                    src="../img/notification.png"
+                    alt="Notifications"
+                    class="icon-notification">
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+            <div class="vertical-divider"></div>
+
+
+
+
+
+
+            <!-- USER -->
+
+
+            <div class="user-profile">
+
+
+
+                <a href="../form/login.php" 
+                class="login-link">
+
+
+                    <span class="user-name">
+
+                        LOGIN
+
+                    </span>
+
+
+                </a>
+
+
+
+
+
+                <div class="user-photo-container">
+
+
+                    <a href="../form/login.php">
+
+
+                        <img 
+                        src="../img/woman.png" 
+                        alt="User Profile"
+                        class="user-photo">
+
+
+                    </a>
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+</header>
+
+
+
+
+
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function(){
+
+
+>>>>>>> b1456c5ca19ea456f438fdb34105b8eb8d25adb2
     const navLinks = document.querySelectorAll(".nav-link");
 
     function setActive(link) {
@@ -55,6 +212,7 @@
         item.classList.remove("active");
       });
 
+<<<<<<< HEAD
       link.classList.add("active");
     }
 
@@ -65,3 +223,34 @@
     });
   });
 </script>
+=======
+
+    navLinks.forEach(link=>{
+
+
+        link.addEventListener("click",function(){
+
+
+            navLinks.forEach(item=>{
+
+                item.classList.remove("active");
+
+            });
+
+
+
+            this.classList.add("active");
+
+        });
+
+
+
+    });
+
+
+
+});
+
+
+</script>
+>>>>>>> b1456c5ca19ea456f438fdb34105b8eb8d25adb2
