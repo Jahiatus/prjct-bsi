@@ -61,6 +61,16 @@ googleBtn.addEventListener("click", async () => {
             "Login Google berhasil : " + user.displayName
         );
 
+        await fetch('login_google.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: user.displayName,
+                email: user.email
+            })
+        });
 
         window.location.href = "homepage.php";
 
