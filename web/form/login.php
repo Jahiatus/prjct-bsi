@@ -287,11 +287,6 @@ required>
 
 
 
-
-
-
-
-
 <button type="submit" class="login-btn">
 
 
@@ -301,44 +296,7 @@ Masuk Sekarang →
 </button>
 
 
-
-
-
-
-
-
-<div class="divider">
-
-<span>
-
-Atau masuk dengan
-
-</span>
-
-
 </div>
-
-
-
-
-
-
-
-<button
-type="button"
-id="googleLogin"
-class="social-btn google-btn">
-
-<img src="../img/google.png" width="18">
-
-Masuk dengan Google
-
-</button>
-
-
-
-
-
 
 
 
@@ -376,13 +334,6 @@ Daftar di sini
 
 
 </main>
-
-
-
-
-
-
-<script type="module" src="../layout/firebase.js"></script>
 
 
 

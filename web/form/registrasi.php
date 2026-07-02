@@ -335,9 +335,7 @@ Daftar Sekarang →
 
 <div class="divider">
 
-<span>
-Atau daftar dengan
-</span>
+
 
 </div>
 
@@ -348,17 +346,6 @@ Atau daftar dengan
 
 <div class="social-login">
 
-
-<button 
-type="button"
-id="googleLogin"
-class="social-btn google-btn">
-
-
-<img src="../img/google.png" width="18">
-
-
-Google
 
 
 </button>
@@ -400,10 +387,6 @@ Login
 
 </main>
 
-
-
-
-<script type="module" src="../layout/firebase.js"></script>
 
 
 
