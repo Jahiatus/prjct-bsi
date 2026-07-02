@@ -73,12 +73,6 @@ defer>
 
 
 </div>
-
-
-
-<?php include __DIR__ . '/../layout/ftr.html'; ?>
-
-
 </body>
 
 </html>

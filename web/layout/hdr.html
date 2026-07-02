@@ -13,8 +13,6 @@
         <a href="../form/homepage.php#hero" class="nav-link"> Schedules </a>
 
         <a href="../form/cekbooking.php" class="nav-link"> Cek Booking </a>
-
-        <a href="../form/booking.php" class="nav-link"> Booking </a>
       </nav>
     </div>
 
@@ -36,15 +34,27 @@
       <!-- USER -->
 
       <div class="user-profile">
+        <?php if(isset($_SESSION['nama'])): ?>
+        <a href="../form/dashboard.php" class="login-link" style="text-decoration: none;">
+          <span class="user-name" style="text-transform: uppercase;"> <?php echo htmlspecialchars($_SESSION['nama']); ?> </span>
+        </a>
+
+        <div class="user-photo-container">
+          <a href="../form/dashboard.php">
+            <img src="../img/profile.png" alt="User Profile" class="user-photo" />
+          </a>
+        </div>
+        <?php else: ?>
         <a href="../form/login.php" class="login-link">
           <span class="user-name"> LOGIN </span>
         </a>
 
         <div class="user-photo-container">
           <a href="../form/login.php">
-            <img src="../img/woman.png" alt="User Profile" class="user-photo" />
+            <img src="../img/guest.svg" alt="User Profile" class="user-photo" />
           </a>
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>
