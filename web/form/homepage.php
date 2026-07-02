@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ombak Biru - Solusi Transportasi Bahari Anda</title>
@@ -120,7 +122,9 @@
             </button>
           </div>
 
-          <button class="search-btn" href="/form/jadwal.php">Cari Jadwal Feri</button>
+          <button class="search-btn" onclick="cekLogin()">
+            Cari Jadwal Feri
+          </button>
         </div>
 
         <!-- content for Pengiriman Barang -->
@@ -175,8 +179,13 @@
             </div>
           </div>
 
-          <button class="search-btn" style="margin-top: 30px">
-            Cari Layanan Pengiriman →
+          <button 
+          class="search-btn" 
+          style="margin-top: 30px"
+          onclick="cekLogin()">
+
+          Cari Layanan Pengiriman →
+
           </button>
         </div>
       </section>
@@ -310,8 +319,35 @@
         });
       });
     </script>
+
+
+<script>
+
+function cekLogin(){
+
+    <?php if(isset($_SESSION['user_id'])){ ?>
+
+        window.location="jadwal.php";
+
+
+    <?php }else{ ?>
+
+
+        window.location="login.php";
+
+
+    <?php } ?>
+
+
+}
+
+</script>
+
+
 </main>
 
+
 <?php include __DIR__ . '/../layout/ftr.html'; ?>
+
 </body>
 </html>
