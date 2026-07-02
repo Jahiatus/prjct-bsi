@@ -403,7 +403,7 @@ Login
 
 
 
-<script type="module" src="../js/firebase.js"></script>
+<script type="module" src="../layout/firebase.js"></script>
 
 
 

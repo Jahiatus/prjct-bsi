@@ -325,24 +325,13 @@ Atau masuk dengan
 
 
 <button
-
 type="button"
-
 id="googleLogin"
-
 class="social-btn google-btn">
 
-
-
-<img src="../img/google.png"
-
-width="18">
-
-
+<img src="../img/google.png" width="18">
 
 Masuk dengan Google
-
-
 
 </button>
 
@@ -393,7 +382,7 @@ Daftar di sini
 
 
 
-<script type="module" src="../js/firebase.js"></script>
+<script type="module" src="../layout/firebase.js"></script>
 
 
 
