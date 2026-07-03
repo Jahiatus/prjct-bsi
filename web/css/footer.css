@@ -1,229 +1,161 @@
 .site-footer{
-
     background:#032b6b;
-
-    color:white;
-
-    padding:55px 0 20px;
-
-    font-family:Poppins,sans-serif;
-
+    color:#fff;
+    padding:60px 0 25px;
+    font-family:'Poppins',sans-serif;
 }
 
 .footer-container{
-
     width:90%;
-
     max-width:1200px;
-
     margin:auto;
-
 }
 
 .footer-main{
-
     display:flex;
-
     justify-content:space-between;
-
-    gap:70px;
-
+    align-items:flex-start;
+    gap:60px;
     flex-wrap:wrap;
-
 }
+
+/* ===========================
+   BRAND
+=========================== */
 
 .footer-brand{
-
-    flex:2;
-
-    min-width:300px;
-
+    flex:1.5;
+    min-width:280px;
 }
 
-.footer-logo{
-
-    width:220px;
-
-    margin-bottom:8px;
-
+.footer-logo img{
+    width:250px;
+    height:auto;
+    display:block;
+    margin-bottom:15px;
 }
 
-.footer-tagline{
-
+.footer-desc{
     color:#dbe8ff;
-
-    margin-bottom:30px;
-
+    line-height:1.8;
     font-size:15px;
-
+    max-width:320px;
 }
 
-.footer-contact h4{
-
-    margin-bottom:20px;
-
-    font-size:18px;
-
-    font-weight:600;
-
-}
-
-.contact-item{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:12px;
-
-    margin-bottom:18px;
-
-}
-
-.contact-item span{
-
-    font-size:22px;
-
-}
-
-.contact-item strong{
-
-    font-size:16px;
-
-}
-
-.contact-item small{
-
-    color:#cdd8ef;
-
-}
+/* ===========================
+   MENU
+=========================== */
 
 .footer-col{
-
     flex:1;
-
-    min-width:180px;
-
+    min-width:170px;
 }
 
-.footer-col h4{
-
-    margin-bottom:18px;
-
+.footer-title{
     font-size:18px;
-
+    font-weight:700;
+    margin-bottom:20px;
+    color:#fff;
 }
 
-.footer-col ul{
-
+.footer-links{
     list-style:none;
-
     padding:0;
-
+    margin:0;
 }
 
-.footer-col li{
-
-    margin-bottom:12px;
-
+.footer-links li{
+    margin-bottom:13px;
 }
 
-.footer-col a{
-
-    color:#dfe8f8;
-
+.footer-links a{
     text-decoration:none;
-
+    color:#dfe8f8;
+    font-size:15px;
     transition:.3s;
-
 }
 
-.footer-col a:hover{
-
+.footer-links a:hover{
     color:#5fc3ff;
-
     padding-left:5px;
-
 }
+
+/* ===========================
+   GARIS
+=========================== */
 
 .site-footer hr{
-
     border:none;
-
-    border-top:1px solid rgba(255,255,255,.15);
-
-    margin:40px 0 20px;
-
+    border-top:1px solid rgba(255,255,255,.18);
+    margin:45px 0 25px;
 }
+
+/* ===========================
+   FOOTER BOTTOM
+=========================== */
 
 .footer-bottom{
-
     display:flex;
-
-    justify-content:space-between;
-
+    flex-direction:column;
+    justify-content:center;
     align-items:center;
-
-    flex-wrap:wrap;
-
+    gap:12px;
 }
 
-.footer-bottom p{
-
-    color:#d8e2f5;
-
+.footer-copyright{
+    color:#dbe8ff;
     font-size:14px;
-
+    text-align:center;
 }
 
-.footer-social{
-
+.footer-socials{
     display:flex;
-
     gap:25px;
-
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
-.footer-social a{
-
-    color:white;
-
+.footer-socials a{
+    color:#fff;
     text-decoration:none;
-
+    font-size:15px;
     transition:.3s;
-
 }
 
-.footer-social a:hover{
-
+.footer-socials a:hover{
     color:#5fc3ff;
-
 }
+
+/* ===========================
+   RESPONSIVE
+=========================== */
 
 @media(max-width:900px){
 
 .footer-main{
-
-flex-direction:column;
-
-gap:45px;
-
+    flex-direction:column;
+    gap:40px;
 }
 
-.footer-bottom{
-
-flex-direction:column;
-
-gap:15px;
-
-text-align:center;
-
+.footer-brand{
+    text-align:center;
 }
 
-.footer-logo{
+.footer-logo img{
+    width:200px;
+    margin:auto auto 15px;
+}
 
-width:180px;
+.footer-desc{
+    margin:auto;
+}
 
+.footer-col{
+    text-align:center;
+}
+
+.footer-links a:hover{
+    padding-left:0;
 }
 
 }
