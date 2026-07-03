@@ -1,0 +1,224 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.partner-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.partner-hero{
+
+    background:linear-gradient(135deg,#003b95,#0057d9);
+
+    color:white;
+
+    text-align:center;
+
+    padding:90px 20px;
+
+}
+
+.partner-hero h1{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+.partner-hero p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+.btn-partner{
+
+    display:inline-block;
+
+    margin-top:35px;
+
+    padding:14px 35px;
+
+    background:#fff;
+
+    color:#0047b3;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.btn-partner:hover{
+
+    background:#e9f2ff;
+
+}
+
+.partner-section{
+
+    padding:70px 0;
+
+}
+
+.partner-section h2{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+    color:#003b95;
+
+    font-size:34px;
+
+}
+
+.benefit-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.benefit-card{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    font-size:40px;
+
+}
+
+.benefit-card h3{
+
+    margin:20px 0 10px;
+
+    color:#003b95;
+
+    font-size:22px;
+
+}
+
+.benefit-card p{
+
+    font-size:15px;
+
+    color:#555;
+
+}
+
+.category-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+}
+
+.category-grid div{
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.partner-list{
+
+    width:70%;
+
+    margin:auto;
+
+    line-height:2.2;
+
+    color:#444;
+
+    font-size:17px;
+
+}
+
+.contact-section{
+
+    background:#003b95;
+
+    color:white;
+
+    padding:70px 0;
+
+}
+
+.contact-section h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.contact-box{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.contact-box div{
+
+    background:rgba(255,255,255,.1);
+
+    border-radius:12px;
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.contact-box h4{
+
+    margin-bottom:10px;
+
+}
