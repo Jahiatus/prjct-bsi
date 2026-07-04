@@ -112,5 +112,5 @@ popupSuccess.addEventListener("click", function (e) {
   }
 });
 btnKembali.addEventListener("click", function () {
-  window.location.href = "../for";
+  window.location.href = "/prjct-bsi/web/form/homepage.php";
 });
