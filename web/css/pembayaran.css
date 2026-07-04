@@ -1,23 +1,31 @@
 /* ==========================
-   RESET
+   RESET KHUSUS POPUP
 ========================== */
 
-* {
+.overlay,
+.overlay * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
 
-body {
-  background: #f5f7fb;
-  display: flex;
+/* ==========================
+   OVERLAY
+========================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+
+  display: none;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+
+  z-index: 9999;
   padding: 30px;
 }
-
 /* ==========================
      CARD
   ========================== */
@@ -256,7 +264,7 @@ body {
   ========================== */
 
 @media (max-width: 600px) {
-  body {
+  .overlay {
     padding: 15px;
   }
 

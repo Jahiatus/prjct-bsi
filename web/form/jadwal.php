@@ -18,17 +18,32 @@ $query = mysqli_query(
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Kapal UI</title>
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Inter (dipakai di popup pembayaran) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols -->
     <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     >
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
 
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/jadwal.css">
+    <link rel="stylesheet" href="../css/pembayaran.css">
+    <link rel="stylesheet" href="../css/pop_up_payment.css">
 </head>
 
 <body>
@@ -95,10 +110,19 @@ $query = mysqli_query(
                         </p>
                         <h3 class="price">
                             Rp <?= number_format($kapal['harga']); ?>
-                        </h3>
-                        <button class="btn btn-primary">
-                            Pilih
-                        </button>
+            </h3>
+                        <button
+    class="btn btn-primary pilih-btn"
+    data-kapal="<?= $kapal['nama_kapal']; ?>"
+    data-kelas="<?= $kapal['kelas']; ?>"
+    data-asal="<?= $kapal['asal']; ?>"
+    data-tujuan="<?= $kapal['tujuan']; ?>"
+    data-tanggal="<?= $kapal['tanggal']; ?>"
+    data-berangkat="<?= $kapal['jam_berangkat']; ?>"
+    data-tiba="<?= $kapal['jam_tiba']; ?>"
+    data-harga="<?= $kapal['harga']; ?>">
+    Pilih
+</button>
                     </div>
                 </article>
             <?php } ?>
@@ -129,7 +153,10 @@ $query = mysqli_query(
       </section>
     </div>
     <?php include __DIR__ .'/../layout/ftr.html'; ?>
-
+    <?php include "pembayaran.php"; ?>
+    <?php include "qris.php"; ?>
+    <?php include "sukses.php"; ?>
+    <script src="../../popup.js"></script>
 </body>
 
 </html>

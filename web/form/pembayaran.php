@@ -1,125 +1,212 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Konfirmasi pembayaran</title>
+ <!-- Google Font -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="../css/pembayaran.css" />
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Inter (dipakai di popup pembayaran) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Material Symbols -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    />
-  </head>
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    >
 
-  <body>
+  <div class="overlay" id="popupKonfirmasi" style="display:none;">
+
     <div class="payment-card">
-      <!-- Header -->
 
-      <div class="card-header">
-        <h2>Konfirmasi pembayaran</h2>
+        <!-- ==========================
+             HEADER
+        =========================== -->
 
-        <button class="close-btn">✕</button>
-      </div>
+        <div class="card-header">
 
-      <!-- Body -->
+            <h2>Konfirmasi Pembayaran</h2>
 
-      <div class="card-body">
-        <!-- Informasi Jadwal -->
+            <button class="close-btn" id="btnCloseKonfirmasi">
+                ✕
+            </button>
 
-        <div class="trip-card">
-          <h4>Rute Perjalanan</h4>
-
-          <div class="route">
-            <span>Pelabuhan Merak, Banten</span>
-
-            <span class="material-symbols-outlined">directions_boat</span>
-
-            <span>Pelabuhan Bakauheni, Lampung</span>
-          </div>
-
-          <hr />
-
-          <div class="detail-grid">
-            <div class="detail-item">
-              <span class="material-symbols-outlined">calendar_month</span>
-              <div>
-                <small>Tanggal</small>
-                <p>24 Okt 2024</p>
-              </div>
-            </div>
-
-            <div class="detail-item">
-              <span class="material-symbols-outlined">workspace_premium</span>
-              <div>
-                <small>Kelas</small>
-                <p>Eksekutif</p>
-              </div>
-            </div>
-
-            <div class="detail-item">
-              <span class="material-symbols-outlined">groups</span>
-              <div>
-                <small>Penumpang</small>
-                <p>1 Dewasa, 0 Anak</p>
-              </div>
-            </div>
-
-            <div class="detail-item">
-              <span class="material-symbols-outlined">directions_walk</span>
-              <div>
-                <small>Kendaraan</small>
-                <p>Pejalan Kaki</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Pembayaran -->
+        <!-- ==========================
+             BODY
+        =========================== -->
 
-        <div class="payment-section">
-          <h4>Metode Pembayaran</h4>
+        <div class="card-body">
 
-          <div class="payment-option active">
-            <div class="payment-info">
-              <span class="material-symbols-outlined">account_balance</span>
+            <!-- Informasi Perjalanan -->
 
-              <div>
-                <h5>Transfer Bank</h5>
+            <div class="trip-card">
 
-                <small>Virtual Account</small>
-              </div>
+                <h4>Rute Perjalanan</h4>
+
+                <div class="route">
+
+                    <span id="popupAsal">
+                        Pelabuhan Merak
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        directions_boat
+                    </span>
+
+                    <span id="popupTujuan">
+                        Pelabuhan Bakauheni
+                    </span>
+
+                </div>
+
+                <hr>
+
+                <div class="detail-grid">
+
+                    <!-- Nama Kapal -->
+
+                    <div class="detail-item">
+
+                        <span class="material-symbols-outlined">
+                            directions_boat
+                        </span>
+
+                        <div>
+
+                            <small>Nama Kapal</small>
+
+                            <p id="popupKapal">
+                                KM Dharma Rucitra
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Tanggal -->
+
+                    <div class="detail-item">
+
+                        <span class="material-symbols-outlined">
+                            calendar_month
+                        </span>
+
+                        <div>
+
+                            <small>Tanggal</small>
+
+                            <p id="popupTanggal">
+                                -
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Jam -->
+
+                    <div class="detail-item">
+
+                        <span class="material-symbols-outlined">
+                            schedule
+                        </span>
+
+                        <div>
+
+                            <small>Jam</small>
+
+                            <p>
+
+                                <span id="popupBerangkat"></span>
+
+                                -
+
+                                <span id="popupTiba"></span>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Kelas -->
+
+                    <div class="detail-item">
+
+                        <span class="material-symbols-outlined">
+                            workspace_premium
+                        </span>
+
+                        <div>
+
+                            <small>Kelas</small>
+
+                            <p id="popupKelas">
+                                -
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <strong>Rp150.000</strong>
-          </div>
+            <!-- Pembayaran -->
 
-          <div class="payment-option">
-            <div class="payment-info">
-              <span class="material-symbols-outlined">qr_code_2</span>
+            <div class="payment-section">
 
-              <div>
-                <h5>QRIS</h5>
+                <h4>Metode Pembayaran</h4>
 
-                <small>Scan & Pay</small>
-              </div>
+                <div class="payment-option active">
+
+                    <div class="payment-info">
+
+                        <span class="material-symbols-outlined">
+                            qr_code_2
+                        </span>
+
+                        <div>
+
+                            <h5>QRIS</h5>
+
+                            <small>
+                                Scan QR Code
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <strong id="popupHarga">
+                        Rp0
+                    </strong>
+
+                </div>
+
             </div>
 
-            <strong>Rp150.000</strong>
-          </div>
         </div>
-      </div>
 
-      <!-- Footer -->
+        <!-- ==========================
+             FOOTER
+        =========================== -->
 
-      <div class="card-footer">
-        <button class="pay-btn">Lanjutkan Pembayaran →</button>
-      </div>
+        <div class="card-footer">
+
+            <button
+                class="pay-btn"
+                id="btnLanjutPembayaran">
+
+                Lanjutkan Pembayaran →
+
+            </button>
+
+        </div>
+
     </div>
-  </body>
-</html>
+
+</div>
+

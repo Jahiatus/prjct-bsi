@@ -1,31 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Google Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/qris.css">
-
-    <title>Pembayaran QRIS</title>
-</head>
-<body>
-    <div class="overlay">
+    <div class="overlay" id="popupQris" style="display:none;">
         <div class="qris-popup">
             <!-- Header -->
             <div class="popup-header">
                 <h2>Pembayaran QRIS</h2>
-                <button class="close-btn">
+                <button class="close-btn" id="btnCloseQris">
                     <span class="material-symbols-outlined">
                         close
                     </span>
@@ -35,7 +14,7 @@
             <div class="popup-body">
                 <div class="payment-info">
                     <span>Total Pembayaran</span>
-                    <h1>Rp 2.500.000</h1>
+                    <h1 id="qrisHarga">Rp 0</h1>
                 </div>
                 <div class="qris-image">
                     <img src="../img/qr.png" alt="QR Code">
@@ -46,7 +25,7 @@
                             schedule
                         </span>
                         <span>
-                            Berlaku dalam <strong>14:59</strong>
+                            Berlaku dalam <strong id="countdown">15:00</strong>
                         </span>
                     </div>
                     <p>
@@ -60,7 +39,7 @@
                 <button class="btn-cancel">
                     Batalkan Pembayaran
                 </button>
-                <button class="btn-primary">
+                <button class="btn-primary" id="btnCekStatus">
                     Cek Status Pembayaran
                     <span class="material-symbols-outlined">
                         arrow_forward
@@ -69,5 +48,3 @@
             </div>
         </div>
     </div>
-</body>
-</html>
