@@ -9,7 +9,7 @@
 
 <body>
 
-<?php include __DIR__ . '/../layout/hdr.html'; ?>
+<?php include __DIR__ .'/../layout/hdr.html'; ?>
 
 <main>
     <?php include __DIR__ . '/../layout/about.html'; ?>

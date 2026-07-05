@@ -1,17 +1,14 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Font */
 body {
   font-family: "Poppins", sans-serif;
   background-color: #f5f7fa;
 }
 
-/* Section About */
 .about-section {
   position: relative;
   width: 100%;
@@ -22,7 +19,6 @@ body {
   background-position: center;
 }
 
-/* Banner */
 .about-banner {
   width: 100%;
   height: auto;
@@ -30,7 +26,6 @@ body {
   display: block;
 }
 
-/* Overlay Gelap */
 .about-section::before {
   content: "";
   position: absolute;
@@ -38,7 +33,6 @@ body {
   background: rgba(0, 0, 0, 0.45);
 }
 
-/* Judul */
 .about-section h1 {
   position: absolute;
   top: 50%;
@@ -54,7 +48,6 @@ body {
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsif */
 @media (max-width: 768px) {
   .about-section {
     height: 350px;
@@ -124,7 +117,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 119, 182, 0.3);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
