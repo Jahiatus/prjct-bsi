@@ -14,6 +14,8 @@ $query = mysqli_query(
      AND tanggal='$tanggal'
      ORDER BY jam_berangkat"
 );
+
+echo "Jumlah data: " . mysqli_num_rows($query);
 ?>
 
 <!DOCTYPE html>
