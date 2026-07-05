@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 include "../../database/koneksi.php";
 
@@ -47,7 +48,7 @@ $query = mysqli_query(
 </head>
 
 <body>
-<?php include __DIR__ .'/../layout/hdr.html'; ?>
+<?php include __DIR__ .'/../form/header.php'; ?>
 <div class="container">
       <!-- HERO -->
       <section class="hero" id="hero">

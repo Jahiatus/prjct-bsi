@@ -249,112 +249,92 @@ body {
     height: 350px;
   }
 }
-/* ===========================
-   BOOKING STYLE - FERIZY
-=========================== */
-
 .booking-card{
     background:#fff;
-    border-radius:18px;
-    padding:28px;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    margin-top:25px;
+    border-radius:20px;
+    padding:35px;
+    margin-top:-70px;
+    position:relative;
+    z-index:10;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 .booking-title{
-    font-size:42px;
+    font-size:34px;
     color:#143a7b;
-    font-weight:700;
     margin-bottom:5px;
 }
 
 .booking-subtitle{
     color:#666;
-    margin-bottom:25px;
+    margin-bottom:30px;
 }
 
 .booking-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px 28px;
+    gap:25px;
 }
 
-.booking-grid .form-group{
+.form-group{
     display:flex;
     flex-direction:column;
 }
 
-.booking-grid label{
+.form-group label{
     font-size:14px;
-    font-weight:600;
     margin-bottom:8px;
-    color:#333;
+    font-weight:600;
 }
 
-.booking-grid select,
-.booking-grid input{
-    height:52px;
+.form-group select,
+.form-group input{
     width:100%;
-    border:1px solid #d9d9d9;
-    border-radius:10px;
+    height:60px;
+    border:1px solid #ddd;
+    border-radius:12px;
     padding:0 15px;
     font-size:15px;
-    background:#fff;
-}
-
-.booking-grid select:focus,
-.booking-grid input:focus{
-    outline:none;
-    border-color:#0b5ed7;
+    background:white;
 }
 
 .booking-btn{
     display:flex;
-    justify-content:flex-end;
-    margin-top:25px;
+    justify-content:center;
+    margin-top:35px;
 }
 
 .booking-btn button{
-    width:260px;
-    height:54px;
+    width:280px;
+    height:56px;
     border:none;
     border-radius:12px;
-    background:#ffb300;
-    color:#fff;
+    background:#ff9d00;
+    color:white;
     font-size:17px;
-    font-weight:600;
+    font-weight:bold;
     cursor:pointer;
-    transition:.3s;
 }
 
-.booking-btn button:hover{
-    background:#f29b00;
-}
-
-@media(max-width:992px){
+@media(max-width:900px){
 
 .booking-grid{
-grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 }
 
 }
 
-@media(max-width:768px){
+@media(max-width:700px){
 
 .booking-grid{
-grid-template-columns:1fr;
-}
-
-.booking-btn{
-justify-content:center;
+    grid-template-columns:1fr;
 }
 
 .booking-btn button{
-width:100%;
+    width:100%;
 }
 
+}
 .booking-title{
 font-size:30px;
-}
-
 }

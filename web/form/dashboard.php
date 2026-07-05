@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include "../database/koneksi.php";
+include "../../database/koneksi.php";
 
 /*
 Mengambil data terbaru dari database
