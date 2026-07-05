@@ -1,161 +1,139 @@
-.site-footer{
-    background:#032b6b;
-    color:#fff;
-    padding:60px 0 25px;
-    font-family:'Poppins',sans-serif;
+.site-footer {
+  background: #032b6b;
+  color: #fff;
+  padding: 60px 0 25px;
+  font-family: "Poppins", sans-serif;
 }
 
-.footer-container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.footer-main{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:60px;
-    flex-wrap:wrap;
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
-/* ===========================
-   BRAND
-=========================== */
-
-.footer-brand{
-    flex:1.5;
-    min-width:280px;
+.footer-brand {
+  flex: 1.5;
+  min-width: 280px;
 }
 
-.footer-logo img{
-    width:250px;
-    height:auto;
-    display:block;
-    margin-bottom:15px;
+.footer-logo img {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin-bottom: 15px;
 }
 
-.footer-desc{
-    color:#dbe8ff;
-    line-height:1.8;
-    font-size:15px;
-    max-width:320px;
+.footer-desc {
+  color: #dbe8ff;
+  line-height: 1.8;
+  font-size: 15px;
+  max-width: 320px;
 }
 
-/* ===========================
-   MENU
-=========================== */
-
-.footer-col{
-    flex:1;
-    min-width:170px;
+.footer-col {
+  flex: 1;
+  min-width: 170px;
 }
 
-.footer-title{
-    font-size:18px;
-    font-weight:700;
-    margin-bottom:20px;
-    color:#fff;
+.footer-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-.footer-links{
-    list-style:none;
-    padding:0;
-    margin:0;
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-links li{
-    margin-bottom:13px;
+.footer-links li {
+  margin-bottom: 13px;
 }
 
-.footer-links a{
-    text-decoration:none;
-    color:#dfe8f8;
-    font-size:15px;
-    transition:.3s;
+.footer-links a {
+  text-decoration: none;
+  color: #dfe8f8;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
-.footer-links a:hover{
-    color:#5fc3ff;
-    padding-left:5px;
+.footer-links a:hover {
+  color: #5fc3ff;
+  padding-left: 5px;
 }
 
-/* ===========================
-   GARIS
-=========================== */
-
-.site-footer hr{
-    border:none;
-    border-top:1px solid rgba(255,255,255,.18);
-    margin:45px 0 25px;
+.site-footer hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 45px 0 25px;
 }
 
-/* ===========================
-   FOOTER BOTTOM
-=========================== */
-
-.footer-bottom{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
-.footer-copyright{
-    color:#dbe8ff;
-    font-size:14px;
-    text-align:center;
+.footer-copyright {
+  color: #dbe8ff;
+  font-size: 14px;
+  text-align: center;
 }
 
-.footer-socials{
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-    justify-content:center;
+.footer-socials {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.footer-socials a{
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    transition:.3s;
+.footer-socials a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
-.footer-socials a:hover{
-    color:#5fc3ff;
+.footer-socials a:hover {
+  color: #5fc3ff;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-@media(max-width:900px){
+  .footer-brand {
+    text-align: center;
+  }
 
-.footer-main{
-    flex-direction:column;
-    gap:40px;
-}
+  .footer-logo img {
+    width: 200px;
+    margin: auto auto 15px;
+  }
 
-.footer-brand{
-    text-align:center;
-}
+  .footer-desc {
+    margin: auto;
+  }
 
-.footer-logo img{
-    width:200px;
-    margin:auto auto 15px;
-}
+  .footer-col {
+    text-align: center;
+  }
 
-.footer-desc{
-    margin:auto;
-}
-
-.footer-col{
-    text-align:center;
-}
-
-.footer-links a:hover{
-    padding-left:0;
-}
-
+  .footer-links a:hover {
+    padding-left: 0;
+  }
 }
