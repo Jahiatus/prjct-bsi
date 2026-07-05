@@ -1,0 +1,456 @@
+/* ===========================
+   VERIFIKASI - OMBAK BIRU
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+.container{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto;
+}
+
+/* ===========================
+   STEPPER
+=========================== */
+
+.stepper{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.step{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.circle{
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#d7d7d7;
+
+    color:#fff;
+
+    font-weight:600;
+
+}
+
+.step.done .circle{
+
+    background:#22c55e;
+
+}
+
+.step.active .circle{
+
+    background:#0F5FAF;
+
+}
+
+.step span{
+
+    margin-top:10px;
+
+    font-size:14px;
+
+}
+
+.line{
+
+    width:100px;
+    height:4px;
+
+    background:#d7d7d7;
+
+    margin:0 15px;
+
+}
+
+.line.active{
+
+    background:#22c55e;
+
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
+
+}
+
+.card h2{
+
+    color:#0F5FAF;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table tr{
+
+    border-bottom:1px solid #ececec;
+
+}
+
+table td{
+
+    padding:16px 0;
+
+}
+
+table td:first-child{
+
+    color:#777;
+
+    width:40%;
+
+}
+
+table td:last-child{
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   AGREEMENT
+=========================== */
+
+.agreement{
+
+    background:#fff;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.agreement input{
+
+    margin-right:10px;
+
+    transform:scale(1.2);
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.btn-back{
+
+    background:#ddd;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+.btn-back:hover{
+
+    background:#c8c8c8;
+
+}
+
+.btn-next{
+
+    background:#0F5FAF;
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 40px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.btn-next:hover{
+
+    background:#084b8a;
+
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.summary{
+
+    position:sticky;
+
+    top:100px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
+
+}
+
+.summary h2{
+
+    color:#0F5FAF;
+
+    margin-bottom:25px;
+
+}
+
+.ship{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.ship i{
+
+    font-size:45px;
+
+    color:#0F5FAF;
+
+}
+
+.ship span{
+
+    display:inline-block;
+
+    margin-top:5px;
+
+    padding:6px 15px;
+
+    background:#0F5FAF;
+
+    color:white;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+}
+
+.summary hr{
+
+    border:none;
+
+    border-top:1px solid #ececec;
+
+    margin:20px 0;
+
+}
+
+.detail{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin:15px 0;
+
+}
+
+.detail span{
+
+    color:#777;
+
+}
+
+.total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+.total h2{
+
+    color:#0F5FAF;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+.content{
+
+grid-template-columns:1fr;
+
+}
+
+.summary{
+
+position:static;
+
+margin-top:20px;
+
+}
+
+.line{
+
+display:none;
+
+}
+
+.stepper{
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+
+width:95%;
+
+}
+
+.card{
+
+padding:20px;
+
+}
+
+.summary{
+
+padding:20px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.btn-back,
+.btn-next{
+
+width:100%;
+
+}
+
+table td{
+
+display:block;
+
+width:100%;
+
+padding:10px 0;
+
+}
+
+}

@@ -1,212 +1,318 @@
- <!-- Google Font -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<?php
+session_start();
 
-    <!-- Font Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    header("Location: homepage.php");
+    exit;
+}
 
-    <!-- Font Inter (dipakai di popup pembayaran) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+// =========================
+// DATA PERJALANAN
+// =========================
 
-    <!-- Google Material Symbols -->
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    >
+$kapal = $_POST['kapal'] ?? '';
+$kelas = $_POST['kelas'] ?? '';
+$asal = $_POST['asal'] ?? '';
+$tujuan = $_POST['tujuan'] ?? '';
+$tanggal = $_POST['tanggal'] ?? '';
+$jam_berangkat = $_POST['jam_berangkat'] ?? '';
+$jam_tiba = $_POST['jam_tiba'] ?? '';
+$harga = (int)($_POST['harga'] ?? 0);
 
-  <div class="overlay" id="popupKonfirmasi" style="display:none;">
+// =========================
+// DATA PEMESAN
+// =========================
 
-    <div class="payment-card">
+$nama_pemesan = $_POST['nama_pemesan'] ?? '';
+$telepon = $_POST['telepon'] ?? '';
+$email = $_POST['email'] ?? '';
 
-        <!-- ==========================
-             HEADER
-        =========================== -->
+// =========================
+// DATA PENUMPANG
+// =========================
 
-        <div class="card-header">
+$titel = $_POST['titel'] ?? '';
+$nama_penumpang = $_POST['nama_penumpang'] ?? '';
+$jenis_id = $_POST['jenis_id'] ?? '';
+$nomor_id = $_POST['nomor_id'] ?? '';
+$usia = $_POST['usia'] ?? '';
+$kota = $_POST['kota'] ?? '';
 
-            <h2>Konfirmasi Pembayaran</h2>
+$total = $harga + 2500;
+?>
 
-            <button class="close-btn" id="btnCloseKonfirmasi">
-                ✕
-            </button>
+<!DOCTYPE html>
+<html lang="id">
 
-        </div>
+<head>
 
-        <!-- ==========================
-             BODY
-        =========================== -->
+<meta charset="UTF-8">
 
-        <div class="card-body">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <!-- Informasi Perjalanan -->
+<title>Pembayaran | Ombak Biru</title>
 
-            <div class="trip-card">
+<link rel="stylesheet" href="../css/pembayaran.css">
 
-                <h4>Rute Perjalanan</h4>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-                <div class="route">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-                    <span id="popupAsal">
-                        Pelabuhan Merak
-                    </span>
+</head>
 
-                    <span class="material-symbols-outlined">
-                        directions_boat
-                    </span>
+<body>
 
-                    <span id="popupTujuan">
-                        Pelabuhan Bakauheni
-                    </span>
+<?php include __DIR__.'/header.php'; ?>
 
-                </div>
+<div class="payment-page">
 
-                <hr>
+<!-- ======================
+     STEPPER
+======================= -->
 
-                <div class="detail-grid">
+<div class="stepper">
 
-                    <!-- Nama Kapal -->
+<div class="step done">
+<div class="circle"><i class="fa fa-check"></i></div>
+<span>Isi Data</span>
+</div>
 
-                    <div class="detail-item">
+<div class="line active"></div>
 
-                        <span class="material-symbols-outlined">
-                            directions_boat
-                        </span>
+<div class="step done">
+<div class="circle"><i class="fa fa-check"></i></div>
+<span>Verifikasi</span>
+</div>
 
-                        <div>
+<div class="line active"></div>
 
-                            <small>Nama Kapal</small>
+<div class="step active">
+<div class="circle">3</div>
+<span>Pembayaran</span>
+</div>
 
-                            <p id="popupKapal">
-                                KM Dharma Rucitra
-                            </p>
+<div class="line"></div>
 
-                        </div>
-
-                    </div>
-
-                    <!-- Tanggal -->
-
-                    <div class="detail-item">
-
-                        <span class="material-symbols-outlined">
-                            calendar_month
-                        </span>
-
-                        <div>
-
-                            <small>Tanggal</small>
-
-                            <p id="popupTanggal">
-                                -
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Jam -->
-
-                    <div class="detail-item">
-
-                        <span class="material-symbols-outlined">
-                            schedule
-                        </span>
-
-                        <div>
-
-                            <small>Jam</small>
-
-                            <p>
-
-                                <span id="popupBerangkat"></span>
-
-                                -
-
-                                <span id="popupTiba"></span>
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Kelas -->
-
-                    <div class="detail-item">
-
-                        <span class="material-symbols-outlined">
-                            workspace_premium
-                        </span>
-
-                        <div>
-
-                            <small>Kelas</small>
-
-                            <p id="popupKelas">
-                                -
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- Pembayaran -->
-
-            <div class="payment-section">
-
-                <h4>Metode Pembayaran</h4>
-
-                <div class="payment-option active">
-
-                    <div class="payment-info">
-
-                        <span class="material-symbols-outlined">
-                            qr_code_2
-                        </span>
-
-                        <div>
-
-                            <h5>QRIS</h5>
-
-                            <small>
-                                Scan QR Code
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                    <strong id="popupHarga">
-                        Rp0
-                    </strong>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- ==========================
-             FOOTER
-        =========================== -->
-
-        <div class="card-footer">
-
-            <button
-                class="pay-btn"
-                id="btnLanjutPembayaran">
-
-                Lanjutkan Pembayaran →
-
-            </button>
-
-        </div>
-
-    </div>
+<div class="step">
+<div class="circle">4</div>
+<span>E-Tiket</span>
+</div>
 
 </div>
 
+<div class="payment-card">
+
+<div class="card-header">
+
+<h2>Konfirmasi Pembayaran</h2>
+
+</div>
+
+<div class="card-body">
+
+<!-- DETAIL PERJALANAN -->
+
+<div class="trip-card">
+
+<h4>Rute Perjalanan</h4>
+
+<div class="route">
+
+<span><?= $asal ?></span>
+
+<span>🚢</span>
+
+<span><?= $tujuan ?></span>
+
+</div>
+
+<hr>
+
+<div class="detail-grid">
+
+<div class="detail-item">
+
+<div>
+
+<small>Nama Kapal</small>
+
+<p><?= $kapal ?></p>
+
+</div>
+
+</div>
+
+<div class="detail-item">
+
+<div>
+
+<small>Kelas</small>
+
+<p><?= $kelas ?></p>
+
+</div>
+
+</div>
+
+<div class="detail-item">
+
+<div>
+
+<small>Tanggal</small>
+
+<p><?= $tanggal ?></p>
+
+</div>
+
+</div>
+
+<div class="detail-item">
+
+<div>
+
+<small>Jam</small>
+
+<p><?= $jam_berangkat ?> - <?= $jam_tiba ?></p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- COUNTDOWN -->
+
+<div class="countdown">
+
+<h3>Selesaikan Pembayaran Dalam</h3>
+
+<div class="timer" id="timer">
+
+15:00
+
+</div>
+
+</div>
+
+<!-- STATUS -->
+
+<div class="status">
+
+Menunggu Pembayaran
+
+</div>
+
+<!-- METODE -->
+
+<div class="payment-section">
+
+<h4>Metode Pembayaran</h4>
+
+<div class="payment-option active">
+
+<div class="payment-info">
+
+<div>
+
+<h5>QRIS</h5>
+
+<small>Scan QR Code menggunakan aplikasi pembayaran.</small>
+
+</div>
+
+</div>
+
+<strong>
+
+Rp <?= number_format($total,0,',','.') ?>
+
+</strong>
+
+</div>
+
+</div>
+
+<!-- QRIS -->
+
+<div class="qris">
+
+<img src="../img/qris.png" alt="QRIS">
+
+</div>
+
+<!-- TOTAL -->
+
+<div class="total-box">
+
+<span>Total Bayar</span>
+
+<h2>
+
+Rp <?= number_format($total,0,',','.') ?>
+
+</h2>
+
+</div>
+
+<form action="tiket.php" method="POST">
+
+<?php
+foreach($_POST as $key=>$value){
+echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">';
+}
+?>
+
+<input type="hidden" name="total" value="<?= $total ?>">
+
+<div class="card-footer">
+
+<button class="pay-btn">
+
+Saya Sudah Bayar
+
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+let time = 900;
+
+const timer = document.getElementById("timer");
+
+setInterval(function(){
+
+let menit = Math.floor(time/60);
+
+let detik = time%60;
+
+timer.innerHTML =
+String(menit).padStart(2,"0")
++ ":"
++
+String(detik).padStart(2,"0");
+
+if(time>0){
+time--;
+}
+
+},1000);
+
+</script>
+
+<?php include __DIR__.'/../layout/ftr.html'; ?>
+
+</body>
+
+</html>

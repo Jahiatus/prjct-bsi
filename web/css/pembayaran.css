@@ -14,30 +14,28 @@
    OVERLAY
 ========================== */
 
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-
-  display: none;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 9999;
-  padding: 30px;
+.payment-page{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto;
 }
 /* ==========================
      CARD
   ========================== */
 
-.payment-card {
-  width: 550px;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
+.payment-card{
 
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+}
 /* ==========================
      HEADER
   ========================== */
@@ -302,4 +300,173 @@
   .pay-btn {
     width: 100%;
   }
+}
+/*=========================
+ STEPPER
+=========================*/
+
+.stepper{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-bottom:35px;
+
+}
+
+.step{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.circle{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#d7d7d7;
+
+color:white;
+
+font-weight:600;
+
+}
+
+.step.done .circle{
+
+background:#22c55e;
+
+}
+
+.step.active .circle{
+
+background:#0F5FAF;
+
+}
+
+.line{
+
+width:90px;
+
+height:4px;
+
+background:#d7d7d7;
+
+margin:0 15px;
+
+}
+
+.line.active{
+
+background:#22c55e;
+
+}
+.countdown{
+
+margin-top:25px;
+
+background:#FFF8E7;
+
+border-left:5px solid orange;
+
+padding:20px;
+
+border-radius:12px;
+
+}
+
+.countdown h3{
+
+color:#e67e22;
+
+margin-bottom:10px;
+
+}
+
+.timer{
+
+font-size:35px;
+
+font-weight:bold;
+
+color:#d35400;
+
+}
+.status{
+
+margin-top:20px;
+
+padding:15px;
+
+border-radius:10px;
+
+background:#FFF8E7;
+
+color:#e67e22;
+
+font-weight:600;
+
+text-align:center;
+
+}
+.qris{
+
+margin-top:25px;
+
+text-align:center;
+
+}
+
+.qris img{
+
+width:220px;
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+padding:10px;
+
+background:white;
+
+}
+.total-box{
+
+margin-top:25px;
+
+padding-top:20px;
+
+border-top:1px dashed #ddd;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.total-box h2{
+
+color:#0F5FAF;
+
+font-size:32px;
+
 }
