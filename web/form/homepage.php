@@ -1,6 +1,12 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
@@ -41,7 +47,7 @@ session_start();
 
       <!-- BOOKING CARD -->
 <section class="booking-card" id="booking-card">
-
+<form action="jadwal.php" method="GET">
     <h2 class="booking-title">Cari Tiket Anda</h2>
     <p class="booking-subtitle">
         Atur jadwal keberangkatan Anda di Pelabuhan
@@ -53,7 +59,7 @@ session_start();
         <div class="form-group">
             <label>Pelabuhan Asal</label>
 
-            <select id="asal">
+            <select id="asal" name="asal">
                 <option value="merak">Merak, Banten</option>
                 <option value="bakauheni">Bakauheni, Lampung</option>
                 <option value="gilimanuk">Gilimanuk, Bali</option>
@@ -65,24 +71,26 @@ session_start();
         <div class="form-group">
             <label>Kelas Layanan</label>
 
-            <select>
-                <option>Reguler</option>
-                <option>Eksekutif</option>
+            <select name="kelas" required>
+                <option value="">Pilih Kelas</option>
+                <option value="Reguler">Reguler</option>
+                <option value="Eksekutif">Eksekutif</option>
             </select>
         </div>
-
         <!-- Tanggal -->
         <div class="form-group">
             <label>Tanggal Masuk Pelabuhan</label>
-
-            <input type="datetime-local">
+            <input
+              type="date"
+              name="tanggal"
+              required
+            >
         </div>
-
         <!-- Tujuan -->
         <div class="form-group">
             <label>Pelabuhan Tujuan</label>
 
-            <select id="tujuan">
+            <select id="tujuan" name="tujuan">
 
             </select>
         </div>
@@ -113,11 +121,12 @@ session_start();
 
     <div class="booking-btn">
 
-        <button onclick="cekLogin()">
+        <button type="submit">
             Cari Jadwal
         </button>
 
     </div>
+</form>
 
 </section>
 
