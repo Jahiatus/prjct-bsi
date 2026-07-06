@@ -99,7 +99,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 </div>
 
-<form action="bayar.php" method="POST">
+<form action="pembayaran.php" method="POST">
 
 <!-- hidden -->
 
