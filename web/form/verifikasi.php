@@ -6,10 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     exit;
 }
 
-// =========================
-// DATA PERJALANAN
-// =========================
-
 $kapal = $_POST['kapal'] ?? '';
 $kelas = $_POST['kelas'] ?? '';
 $asal = $_POST['asal'] ?? '';
@@ -19,17 +15,9 @@ $jam_berangkat = $_POST['jam_berangkat'] ?? '';
 $jam_tiba = $_POST['jam_tiba'] ?? '';
 $harga = $_POST['harga'] ?? '';
 
-// =========================
-// DATA PEMESAN
-// =========================
-
 $nama_pemesan = $_POST['nama_pemesan'] ?? '';
 $telepon = $_POST['telepon'] ?? '';
 $email = $_POST['email'] ?? '';
-
-// =========================
-// DATA PENUMPANG
-// =========================
 
 $titel = $_POST['titel'] ?? '';
 $nama_penumpang = $_POST['nama_penumpang'] ?? '';
@@ -101,8 +89,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <form action="bayar.php" method="POST">
 
-<!-- hidden -->
-
 <?php
 foreach($_POST as $key=>$value){
 echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">';
@@ -110,8 +96,6 @@ echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">
 ?>
 
 <div class="content">
-
-<!-- LEFT -->
 
 <div class="left">
 
