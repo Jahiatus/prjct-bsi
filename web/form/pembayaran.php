@@ -239,7 +239,7 @@ Rp <?= number_format($total,0,',','.') ?>
 
 <div class="qris">
 
-<img src="../img/qris.png" alt="QRIS">
+<img src="../img/qr.png" alt="QRIS">
 
 </div>
 
