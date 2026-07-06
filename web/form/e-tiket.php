@@ -42,7 +42,7 @@ $kota = $_POST['kota'] ?? '';
 // NOMOR BOOKING
 // ======================
 
-$booking = "OB".date("Ymd").rand(1000,9999);
+$booking = $_POST['booking'];
 
 ?>
 

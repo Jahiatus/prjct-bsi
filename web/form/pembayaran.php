@@ -17,7 +17,7 @@ $tujuan = $_POST['tujuan'] ?? '';
 $tanggal = $_POST['tanggal'] ?? '';
 $jam_berangkat = $_POST['jam_berangkat'] ?? '';
 $jam_tiba = $_POST['jam_tiba'] ?? '';
-$harga = (int)($_POST['harga'] ?? 0);
+$harga = (int) ($_POST['harga'] ?? 0);
 
 // =========================
 // DATA PEMESAN
@@ -46,272 +46,342 @@ $total = $harga + 2500;
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pembayaran | Ombak Biru</title>
+    <title>Pembayaran | Ombak Biru</title>
 
-<link rel="stylesheet" href="../css/pembayaran.css">
+    <link rel="stylesheet" href="../css/pembayaran.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<?php include __DIR__.'/../layout/hdr.html'; ?>
+    <?php include __DIR__ . '/../layout/hdr.html'; ?>
 
-<div class="payment-page">
+    <div class="payment-page">
 
-<!-- ======================
+        <!-- ======================
      STEPPER
 ======================= -->
 
-<div class="stepper">
+        <div class="stepper">
 
-<div class="step done">
-<div class="circle"><i class="fa fa-check"></i></div>
-<span>Isi Data</span>
-</div>
+            <div class="step done">
+                <div class="circle"><i class="fa fa-check"></i></div>
+                <span>Isi Data</span>
+            </div>
 
-<div class="line active"></div>
+            <div class="line active"></div>
 
-<div class="step done">
-<div class="circle"><i class="fa fa-check"></i></div>
-<span>Verifikasi</span>
-</div>
+            <div class="step done">
+                <div class="circle"><i class="fa fa-check"></i></div>
+                <span>Verifikasi</span>
+            </div>
 
-<div class="line active"></div>
+            <div class="line active"></div>
 
-<div class="step active">
-<div class="circle">3</div>
-<span>Pembayaran</span>
-</div>
+            <div class="step active">
+                <div class="circle">3</div>
+                <span>Pembayaran</span>
+            </div>
 
-<div class="line"></div>
+            <div class="line"></div>
 
-<div class="step">
-<div class="circle">4</div>
-<span>E-Tiket</span>
-</div>
+            <div class="step">
+                <div class="circle">4</div>
+                <span>E-Tiket</span>
+            </div>
 
-</div>
+        </div>
 
-<div class="payment-card">
+        <div class="payment-card">
 
-<div class="card-header">
+            <div class="card-header">
 
-<h2>Konfirmasi Pembayaran</h2>
+                <h2>Konfirmasi Pembayaran</h2>
 
-</div>
+            </div>
 
-<div class="card-body">
+            <div class="card-body">
 
-<!-- DETAIL PERJALANAN -->
+                <!-- DETAIL PERJALANAN -->
 
-<div class="trip-card">
+                <div class="trip-card">
 
-<h4>Rute Perjalanan</h4>
+                    <h4>Rute Perjalanan</h4>
 
-<div class="route">
+                    <div class="route">
 
-<span><?= $asal ?></span>
+                        <span><?= $asal ?></span>
 
-<span>🚢</span>
+                        <span>🚢</span>
 
-<span><?= $tujuan ?></span>
+                        <span><?= $tujuan ?></span>
 
-</div>
+                    </div>
 
-<hr>
+                    <hr>
 
-<div class="detail-grid">
+                    <div class="detail-grid">
 
-<div class="detail-item">
+                        <div class="detail-item">
 
-<div>
+                            <div>
 
-<small>Nama Kapal</small>
+                                <small>Nama Kapal</small>
 
-<p><?= $kapal ?></p>
+                                <p><?= $kapal ?></p>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-<div class="detail-item">
+                        <div class="detail-item">
 
-<div>
+                            <div>
 
-<small>Kelas</small>
+                                <small>Kelas</small>
 
-<p><?= $kelas ?></p>
+                                <p><?= $kelas ?></p>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-<div class="detail-item">
+                        <div class="detail-item">
 
-<div>
+                            <div>
 
-<small>Tanggal</small>
+                                <small>Tanggal</small>
 
-<p><?= $tanggal ?></p>
+                                <p><?= $tanggal ?></p>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-<div class="detail-item">
+                        <div class="detail-item">
 
-<div>
+                            <div>
 
-<small>Jam</small>
+                                <small>Jam</small>
 
-<p><?= $jam_berangkat ?> - <?= $jam_tiba ?></p>
+                                <p><?= $jam_berangkat ?> - <?= $jam_tiba ?></p>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<!-- COUNTDOWN -->
+                <!-- COUNTDOWN -->
 
-<div class="countdown">
+                <div class="countdown">
 
-<h3>Selesaikan Pembayaran Dalam</h3>
+                    <h3>Selesaikan Pembayaran Dalam</h3>
 
-<div class="timer" id="timer">
+                    <div class="timer" id="timer">
 
-15:00
+                        15:00
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<!-- STATUS -->
+                <!-- STATUS -->
 
-<div class="status">
+                <div class="status">
 
-Menunggu Pembayaran
+                    Menunggu Pembayaran
 
-</div>
+                </div>
 
-<!-- METODE -->
+                <!-- METODE -->
 
-<div class="payment-section">
+                <div class="payment-section">
 
-<h4>Metode Pembayaran</h4>
+                    <h4>Metode Pembayaran</h4>
 
-<div class="payment-option active">
+                    <div class="payment-option active">
 
-<div class="payment-info">
+                        <div class="payment-info">
 
-<div>
+                            <div>
 
-<h5>QRIS</h5>
+                                <h5>QRIS</h5>
 
-<small>Scan QR Code menggunakan aplikasi pembayaran.</small>
+                                <small>Scan QR Code menggunakan aplikasi pembayaran.</small>
 
-</div>
+                            </div>
 
-</div>
+                        </div>
 
-<strong>
+                        <strong>
 
-Rp <?= number_format($total,0,',','.') ?>
+                            Rp <?= number_format($total, 0, ',', '.') ?>
 
-</strong>
+                        </strong>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<!-- QRIS -->
+                <!-- QRIS -->
 
-<div class="qris">
+                <div class="qris">
 
-<img src="../img/qr.png" alt="QRIS">
+                    <img src="../img/qr.png" alt="QRIS">
 
-</div>
+                </div>
 
-<!-- TOTAL -->
+                <!-- TOTAL -->
 
-<div class="total-box">
+                <div class="total-box">
 
-<span>Total Bayar</span>
+                    <span>Total Bayar</span>
 
-<h2>
+                    <h2>
 
-Rp <?= number_format($total,0,',','.') ?>
+                        Rp <?= number_format($total, 0, ',', '.') ?>
 
-</h2>
+                    </h2>
 
-</div>
+                </div>
 
-<form action="e-tiket.php" method="POST">
+                <?php
+                include "../../database/koneksi.php";
 
-<?php
-foreach($_POST as $key=>$value){
-echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">';
-}
-?>
+                $booking = "OB" . date("Ymd") . rand(1000, 9999);
 
-<input type="hidden" name="total" value="<?= $total ?>">
+                $user_id = $_SESSION['user_id'];
 
-<div class="card-footer">
+                mysqli_query($koneksi, "
+INSERT INTO tiket(
 
-<button class="pay-btn">
+user_id,
+booking_code,
 
-Saya Sudah Bayar
+kapal,
+kelas,
 
-</button>
+asal,
+tujuan,
 
-</div>
+tanggal,
+jam_berangkat,
+jam_tiba,
 
-</form>
+nama_pemesan,
+telepon,
+email,
 
-</div>
+titel,
+nama_penumpang,
+jenis_id,
+nomor_id,
+usia,
+kota,
 
-</div>
+total,
+status
 
-</div>
+)
 
-<script>
+VALUES(
 
-let time = 900;
+'$user_id',
+'$booking',
 
-const timer = document.getElementById("timer");
+'$kapal',
+'$kelas',
 
-setInterval(function(){
+'$asal',
+'$tujuan',
 
-let menit = Math.floor(time/60);
+'$tanggal',
+'$jam_berangkat',
+'$jam_tiba',
 
-let detik = time%60;
+'$nama_pemesan',
+'$telepon',
+'$email',
 
-timer.innerHTML =
-String(menit).padStart(2,"0")
-+ ":"
-+
-String(detik).padStart(2,"0");
+'$titel',
+'$nama_penumpang',
+'$jenis_id',
+'$nomor_id',
+'$usia',
+'$kota',
 
-if(time>0){
-time--;
-}
+'$total',
+'Lunas'
 
-},1000);
+)
+");
+                ?>
 
-</script>
+                <form action="e-tiket.php" method="POST">
 
-<?php include __DIR__.'/../layout/ftr.html'; ?>
+                    <?php
+                    foreach ($_POST as $key => $value) {
+                        echo '<input type="hidden" name="' . $key . '" value="' . htmlspecialchars($value) . '">';
+                    }
+                    ?>
+
+                    <input type="hidden" name="booking" value="<?= $booking ?>">
+
+                    <input type="hidden" name="total" value="<?= $total ?>">
+
+                    <div class="card-footer">
+
+                        <button class="pay-btn">
+                            Saya Sudah Bayar
+                        </button>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let time = 900;
+
+        const timer = document.getElementById("timer");
+
+        setInterval(function () {
+
+            let menit = Math.floor(time / 60);
+
+            let detik = time % 60;
+
+            timer.innerHTML =
+                String(menit).padStart(2, "0")
+                + ":"
+                +
+                String(detik).padStart(2, "0");
+
+            if (time > 0) {
+                time--;
+            }
+
+        }, 1000);
+
+    </script>
+
+    <?php include __DIR__ . '/../layout/ftr.html'; ?>
 
 </body>
 

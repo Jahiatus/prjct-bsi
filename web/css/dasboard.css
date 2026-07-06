@@ -275,3 +275,103 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================
+   STATISTIK
+========================== */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:0 35px;
+    margin-bottom:30px;
+}
+
+.box{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    border:1px solid #edf2f7;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+.box h3{
+    font-size:36px;
+    color:#2e73e5;
+    margin-bottom:10px;
+}
+
+.box p{
+    color:#6b7280;
+    font-size:15px;
+}
+
+
+/* ==========================
+   PERJALANAN TERAKHIR
+========================== */
+
+.last-ticket{
+    background:#fff;
+    margin:0 35px 35px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.last-ticket h2{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.ticket-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.ticket-info h3{
+    color:#0c2d68;
+    font-size:22px;
+}
+
+.ticket-info p{
+    color:#6b7280;
+    margin-top:5px;
+}
+
+.ticket-info strong{
+    font-size:24px;
+    color:#2e73e5;
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.stats{
+    grid-template-columns:1fr;
+    padding:0 25px;
+}
+
+.last-ticket{
+    margin:0 25px 25px;
+}
+
+.ticket-info{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+}

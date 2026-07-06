@@ -10,7 +10,7 @@
 <body>
     <?php include '../layout/hdr.html'; ?>
     <main>
-           
+        <link  href="../form/homepage.html" rel="import">
     </main>
     <?php include '../layout/ftr.html'?>
 </body>
