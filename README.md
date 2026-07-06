@@ -173,7 +173,7 @@ Setelah pembayaran berhasil, pengguna akan memperoleh **Electronic Boarding Pass
 | Name | Student ID | Role |
 |------|-----------:|------|
 | **Muhammad Abyan As Syaddad** | 19250283 | UI/UX Designer & Full-Stack Developer |
-| **Mirza Aldirobby Asyraf** | 19250108 | Backend Developer |
+| **Mirza Aldirobby Asyraf** | 19250108 | Frontend Developer |
 | **Ariq Haudzan Bahrudin** | 19250881 | Documentation & Quality Assurance |
 | **Muhammad Dzaki Awaludzaman** | 19250830 | Documentation & Quality Assurance |
 | **Revan Zahran Adhitya** | 19252089 | Frontend Developer |
