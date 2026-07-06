@@ -52,14 +52,7 @@ if (!$user) {
 
 $nama = $user['nama_depan'] . " " . $user['nama_belakang'];
 $email = $user['email'];
-
 $lastTicket = mysqli_fetch_assoc($last);
-
-/*
-Kalau nanti ada foto profile di database
-tinggal ganti bagian ini
-*/
-
 $foto = "../img/profile.png";
 ?>
 
@@ -86,8 +79,6 @@ $foto = "../img/profile.png";
 <body>
 
     <div class="container">
-
-        <!-- Sidebar -->
 
         <aside class="sidebar">
 

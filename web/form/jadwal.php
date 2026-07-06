@@ -23,25 +23,13 @@ $query = mysqli_query(
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jadwal Kapal UI</title>
-
-    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Font Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Inter (dipakai di popup pembayaran) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Google Material Symbols -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="../css/jadwal.css">
     <link rel="stylesheet" href="../css/pembayaran.css">
     <link rel="stylesheet" href="../css/pop_up_payment.css">
@@ -50,7 +38,6 @@ $query = mysqli_query(
 <body>
     <?php include __DIR__ . '/../layout/hdr.html'; ?>
     <div class="container">
-        <!-- HERO -->
         <section class="hero" id="hero">
             <h1>Eksplorasi Laut Nusantara.</h1>
             <p>

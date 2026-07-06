@@ -35,7 +35,6 @@ if (!isset($_SESSION['user_id'])) {
       </div>
     </section>
     <div class="container">
-      <!-- HERO -->
       <section class="hero" id="hero">
         <h1>Eksplorasi Laut Nusantara.</h1>
 
@@ -44,9 +43,7 @@ if (!isset($_SESSION['user_id'])) {
           transparan bersama Ombak Biru.
         </p>
       </section>
-
-      <!-- BOOKING CARD -->
-<section class="booking-card" id="booking-card">
+      <section class="booking-card" id="booking-card">
 <form action="jadwal.php" method="GET">
     <h2 class="booking-title">Cari Tiket Anda</h2>
     <p class="booking-subtitle">
@@ -54,8 +51,6 @@ if (!isset($_SESSION['user_id'])) {
     </p>
 
     <div class="booking-grid">
-
-        <!-- Pelabuhan Asal -->
         <div class="form-group">
             <label>Pelabuhan Asal</label>
 
@@ -66,8 +61,6 @@ if (!isset($_SESSION['user_id'])) {
                 <option value="ketapang">Ketapang, Jawa Timur</option>
             </select>
         </div>
-
-        <!-- Kelas -->
         <div class="form-group">
             <label>Kelas Layanan</label>
 
@@ -77,7 +70,6 @@ if (!isset($_SESSION['user_id'])) {
                 <option value="Eksekutif">Eksekutif</option>
             </select>
         </div>
-        <!-- Tanggal -->
         <div class="form-group">
             <label>Tanggal Masuk Pelabuhan</label>
             <input
@@ -86,7 +78,6 @@ if (!isset($_SESSION['user_id'])) {
               required
             >
         </div>
-        <!-- Tujuan -->
         <div class="form-group">
             <label>Pelabuhan Tujuan</label>
 
@@ -94,8 +85,6 @@ if (!isset($_SESSION['user_id'])) {
 
             </select>
         </div>
-
-        <!-- Jenis -->
         <div class="form-group">
             <label>Jenis Pengguna Jasa</label>
 
@@ -104,8 +93,6 @@ if (!isset($_SESSION['user_id'])) {
                 <option>Berkendara</option>
             </select>
         </div>
-
-        <!-- Penumpang -->
         <div class="form-group">
             <label>Penumpang</label>
 
@@ -129,9 +116,6 @@ if (!isset($_SESSION['user_id'])) {
 </form>
 
 </section>
-
-
-      <!-- PROMO -->
       <section class="promo-section">
         <div class="promo-header">
           <div>
@@ -188,8 +172,6 @@ if (!isset($_SESSION['user_id'])) {
           </div>
         </div>
       </section>
-
-      <!-- APP -->
       <section class="app-section">
         <div class="app-content">
           <span class="rating"> ⭐ 4.9/5 dari 100rb ulasan </span>

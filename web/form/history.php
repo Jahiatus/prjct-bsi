@@ -110,9 +110,6 @@ Logout
 </a>
 
 </aside>
-
-<!-- CONTENT -->
-
 <main class="content">
 
 <h1>Riwayat Perjalanan</h1>

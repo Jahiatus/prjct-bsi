@@ -6,10 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] != 'POST') {
     exit;
 }
 
-// ======================
-// DATA PERJALANAN
-// ======================
-
 $kapal = $_POST['kapal'] ?? '';
 $kelas = $_POST['kelas'] ?? '';
 $asal = $_POST['asal'] ?? '';

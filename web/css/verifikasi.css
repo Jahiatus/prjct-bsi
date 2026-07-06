@@ -1,456 +1,330 @@
-/* ===========================
-   VERIFIKASI - OMBAK BIRU
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body{
-    background:#f4f7fb;
-    color:#333;
+body {
+  background: #f4f7fb;
+  color: #333;
 }
 
-.container{
-    width:90%;
-    max-width:1400px;
-    margin:40px auto;
+.container {
+  width: 90%;
+  max-width: 1400px;
+  margin: 40px auto;
 }
 
-/* ===========================
-   STEPPER
-=========================== */
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-.stepper{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin-bottom:40px;
-
+  margin-bottom: 40px;
 }
 
-.step{
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.circle{
+.circle {
+  width: 48px;
+  height: 48px;
 
-    width:48px;
-    height:48px;
+  border-radius: 50%;
 
-    border-radius:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  background: #d7d7d7;
 
-    background:#d7d7d7;
+  color: #fff;
 
-    color:#fff;
-
-    font-weight:600;
-
+  font-weight: 600;
 }
 
-.step.done .circle{
-
-    background:#22c55e;
-
+.step.done .circle {
+  background: #22c55e;
 }
 
-.step.active .circle{
-
-    background:#0F5FAF;
-
+.step.active .circle {
+  background: #0f5faf;
 }
 
-.step span{
+.step span {
+  margin-top: 10px;
 
-    margin-top:10px;
-
-    font-size:14px;
-
+  font-size: 14px;
 }
 
-.line{
+.line {
+  width: 100px;
+  height: 4px;
 
-    width:100px;
-    height:4px;
+  background: #d7d7d7;
 
-    background:#d7d7d7;
-
-    margin:0 15px;
-
+  margin: 0 15px;
 }
 
-.line.active{
-
-    background:#22c55e;
-
+.line.active {
+  background: #22c55e;
 }
 
-/* ===========================
-   CONTENT
-=========================== */
+.content {
+  display: grid;
 
-.content{
+  grid-template-columns: 2fr 1fr;
 
-    display:grid;
-
-    grid-template-columns:2fr 1fr;
-
-    gap:30px;
-
+  gap: 30px;
 }
 
-/* ===========================
-   CARD
-=========================== */
+.card {
+  background: #fff;
 
-.card{
+  border-radius: 18px;
 
-    background:#fff;
+  padding: 30px;
 
-    border-radius:18px;
+  margin-bottom: 25px;
 
-    padding:30px;
-
-    margin-bottom:25px;
-
-    box-shadow:0 8px 30px rgba(0,0,0,.05);
-
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
-.card h2{
+.card h2 {
+  color: #0f5faf;
 
-    color:#0F5FAF;
-
-    margin-bottom:25px;
-
+  margin-bottom: 25px;
 }
 
-/* ===========================
-   TABLE
-=========================== */
+table {
+  width: 100%;
 
-table{
-
-    width:100%;
-
-    border-collapse:collapse;
-
+  border-collapse: collapse;
 }
 
-table tr{
-
-    border-bottom:1px solid #ececec;
-
+table tr {
+  border-bottom: 1px solid #ececec;
 }
 
-table td{
-
-    padding:16px 0;
-
+table td {
+  padding: 16px 0;
 }
 
-table td:first-child{
+table td:first-child {
+  color: #777;
 
-    color:#777;
-
-    width:40%;
-
+  width: 40%;
 }
 
-table td:last-child{
-
-    font-weight:600;
-
+table td:last-child {
+  font-weight: 600;
 }
 
-/* ===========================
-   AGREEMENT
-=========================== */
+.agreement {
+  background: #fff;
 
-.agreement{
+  padding: 20px;
 
-    background:#fff;
+  border-radius: 15px;
 
-    padding:20px;
-
-    border-radius:15px;
-
-    box-shadow:0 5px 20px rgba(0,0,0,.05);
-
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.agreement input{
+.agreement input {
+  margin-right: 10px;
 
-    margin-right:10px;
-
-    transform:scale(1.2);
-
+  transform: scale(1.2);
 }
 
-/* ===========================
-   BUTTON
-=========================== */
+.button-group {
+  display: flex;
 
-.button-group{
+  justify-content: space-between;
 
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:30px;
-
+  margin-top: 30px;
 }
 
-.btn-back{
+.btn-back {
+  background: #ddd;
 
-    background:#ddd;
+  border: none;
 
-    border:none;
+  padding: 15px 35px;
 
-    padding:15px 35px;
+  border-radius: 10px;
 
-    border-radius:10px;
+  cursor: pointer;
 
-    cursor:pointer;
-
-    font-size:15px;
-
+  font-size: 15px;
 }
 
-.btn-back:hover{
-
-    background:#c8c8c8;
-
+.btn-back:hover {
+  background: #c8c8c8;
 }
 
-.btn-next{
+.btn-next {
+  background: #0f5faf;
 
-    background:#0F5FAF;
+  color: #fff;
 
-    color:#fff;
+  border: none;
 
-    border:none;
+  padding: 15px 40px;
 
-    padding:15px 40px;
+  border-radius: 10px;
 
-    border-radius:10px;
+  cursor: pointer;
 
-    cursor:pointer;
+  font-size: 15px;
 
-    font-size:15px;
-
-    transition:.3s;
-
+  transition: 0.3s;
 }
 
-.btn-next:hover{
-
-    background:#084b8a;
-
+.btn-next:hover {
+  background: #084b8a;
 }
 
-/* ===========================
-   SIDEBAR
-=========================== */
+.summary {
+  position: sticky;
 
-.summary{
+  top: 100px;
 
-    position:sticky;
+  background: #fff;
 
-    top:100px;
+  border-radius: 18px;
 
-    background:#fff;
+  padding: 30px;
 
-    border-radius:18px;
-
-    padding:30px;
-
-    box-shadow:0 8px 30px rgba(0,0,0,.05);
-
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
 }
 
-.summary h2{
+.summary h2 {
+  color: #0f5faf;
 
-    color:#0F5FAF;
-
-    margin-bottom:25px;
-
+  margin-bottom: 25px;
 }
 
-.ship{
+.ship {
+  display: flex;
 
-    display:flex;
+  align-items: center;
 
-    align-items:center;
+  gap: 15px;
 
-    gap:15px;
-
-    margin-bottom:20px;
-
+  margin-bottom: 20px;
 }
 
-.ship i{
+.ship i {
+  font-size: 45px;
 
-    font-size:45px;
-
-    color:#0F5FAF;
-
+  color: #0f5faf;
 }
 
-.ship span{
+.ship span {
+  display: inline-block;
 
-    display:inline-block;
+  margin-top: 5px;
 
-    margin-top:5px;
+  padding: 6px 15px;
 
-    padding:6px 15px;
+  background: #0f5faf;
 
-    background:#0F5FAF;
+  color: white;
 
-    color:white;
+  border-radius: 20px;
 
-    border-radius:20px;
-
-    font-size:13px;
-
+  font-size: 13px;
 }
 
-.summary hr{
+.summary hr {
+  border: none;
 
-    border:none;
+  border-top: 1px solid #ececec;
 
-    border-top:1px solid #ececec;
-
-    margin:20px 0;
-
+  margin: 20px 0;
 }
 
-.detail{
+.detail {
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
-
-    margin:15px 0;
-
+  margin: 15px 0;
 }
 
-.detail span{
-
-    color:#777;
-
+.detail span {
+  color: #777;
 }
 
-.total{
+.total {
+  display: flex;
 
-    display:flex;
+  justify-content: space-between;
 
-    justify-content:space-between;
+  align-items: center;
 
-    align-items:center;
-
-    margin-top:20px;
-
+  margin-top: 20px;
 }
 
-.total h2{
-
-    color:#0F5FAF;
-
+.total h2 {
+  color: #0f5faf;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+@media (max-width: 991px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
 
-@media(max-width:991px){
+  .summary {
+    position: static;
 
-.content{
+    margin-top: 20px;
+  }
 
-grid-template-columns:1fr;
+  .line {
+    display: none;
+  }
 
+  .stepper {
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
 }
 
-.summary{
+@media (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
 
-position:static;
+  .card {
+    padding: 20px;
+  }
 
-margin-top:20px;
+  .summary {
+    padding: 20px;
+  }
 
-}
+  .button-group {
+    flex-direction: column;
 
-.line{
+    gap: 15px;
+  }
 
-display:none;
+  .btn-back,
+  .btn-next {
+    width: 100%;
+  }
 
-}
+  table td {
+    display: block;
 
-.stepper{
+    width: 100%;
 
-flex-wrap:wrap;
-
-gap:15px;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.container{
-
-width:95%;
-
-}
-
-.card{
-
-padding:20px;
-
-}
-
-.summary{
-
-padding:20px;
-
-}
-
-.button-group{
-
-flex-direction:column;
-
-gap:15px;
-
-}
-
-.btn-back,
-.btn-next{
-
-width:100%;
-
-}
-
-table td{
-
-display:block;
-
-width:100%;
-
-padding:10px 0;
-
-}
-
+    padding: 10px 0;
+  }
 }

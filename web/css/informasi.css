@@ -1,11 +1,5 @@
-/* ===========================
-   GOOGLE FONT
-=========================== */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* ===========================
-   RESET
-=========================== */
 * {
   margin: 0;
   padding: 0;
@@ -18,10 +12,6 @@ body {
   color: #333;
   line-height: 1.8;
 }
-
-/* ===========================
-   CONTAINER
-=========================== */
 
 .privacy-policy,
 .help-center,
@@ -39,10 +29,6 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* ===========================
-   TITLE
-=========================== */
-
 .privacy-policy h1,
 .help-center h1,
 .terms-policy h1 {
@@ -57,10 +43,6 @@ body {
   font-weight: 700;
 }
 
-/* ===========================
-   UPDATED
-=========================== */
-
 .updated {
   text-align: center;
 
@@ -72,10 +54,6 @@ body {
 
   font-style: italic;
 }
-
-/* ===========================
-   SUB TITLE
-=========================== */
 
 .privacy-policy h2,
 .help-center h2,
@@ -93,10 +71,6 @@ body {
   font-size: 24px;
 }
 
-/* ===========================
-   PARAGRAPH
-=========================== */
-
 .privacy-policy p,
 .help-center p,
 .terms-policy p {
@@ -108,10 +82,6 @@ body {
 
   color: #444;
 }
-
-/* ===========================
-   LIST
-=========================== */
 
 .privacy-policy ul,
 .privacy-policy ol,
@@ -130,10 +100,6 @@ body {
   color: #444;
 }
 
-/* ===========================
-   HOVER EFFECT
-=========================== */
-
 .privacy-policy h2:hover,
 .help-center h2:hover,
 .terms-policy h2:hover {
@@ -141,10 +107,6 @@ body {
 
   transition: 0.3s;
 }
-
-/* ===========================
-   RESPONSIVE
-=========================== */
 
 @media (max-width: 992px) {
   .privacy-policy,

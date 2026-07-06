@@ -31,20 +31,13 @@ $kota = $_POST['kota'] ?? '';
 <html lang="id">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Data | Ombak Biru</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Verifikasi Data | Ombak Biru</title>
-
-<link rel="stylesheet" href="../css/verifikasi.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="../css/verifikasi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -53,278 +46,214 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <div class="container">
 
-<!-- STEP -->
+    <!-- STEP -->
+    <div class="stepper">
 
-<div class="stepper">
+        <div class="step done">
+            <div class="circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <span>Isi Data</span>
+        </div>
+
+        <div class="line active"></div>
 
-<div class="step done">
-<div class="circle">
-<i class="fa-solid fa-check"></i>
-</div>
-<span>Isi Data</span>
-</div>
+        <div class="step active">
+            <div class="circle">2</div>
+            <span>Verifikasi</span>
+        </div>
 
-<div class="line active"></div>
+        <div class="line"></div>
 
-<div class="step active">
-<div class="circle">2</div>
-<span>Verifikasi</span>
-</div>
+        <div class="step">
+            <div class="circle">3</div>
+            <span>Pembayaran</span>
+        </div>
 
-<div class="line"></div>
+        <div class="line"></div>
 
-<div class="step">
-<div class="circle">3</div>
-<span>Pembayaran</span>
-</div>
+        <div class="step">
+            <div class="circle">4</div>
+            <span>E-Tiket</span>
+        </div>
 
-<div class="line"></div>
+    </div>
 
-<div class="step">
-<div class="circle">4</div>
-<span>E-Tiket</span>
-</div>
+    <form action="pembayaran.php" method="POST">
+
+        <?php
+        foreach ($_POST as $key => $value) {
+            echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">';
+        }
+        ?>
 
-</div>
+        <div class="content">
 
-<form action="pembayaran.php" method="POST">
+            <div class="left">
 
-<?php
-foreach($_POST as $key=>$value){
-echo '<input type="hidden" name="'.$key.'" value="'.htmlspecialchars($value).'">';
-}
-?>
+                <div class="card">
 
-<div class="content">
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        Data Pemesan
+                    </h2>
 
-<div class="left">
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td><?= $nama_pemesan ?></td>
+                        </tr>
 
-<div class="card">
+                        <tr>
+                            <td>No. Handphone</td>
+                            <td><?= $telepon ?></td>
+                        </tr>
 
-<h2>
-<i class="fa-solid fa-user"></i>
-Data Pemesan
-</h2>
+                        <tr>
+                            <td>Email</td>
+                            <td><?= $email ?></td>
+                        </tr>
+                    </table>
 
-<table>
+                </div>
 
-<tr>
-<td>Nama</td>
-<td><?= $nama_pemesan ?></td>
-</tr>
+                <div class="card">
 
-<tr>
-<td>No. Handphone</td>
-<td><?= $telepon ?></td>
-</tr>
+                    <h2>
+                        <i class="fa-solid fa-id-card"></i>
+                        Data Penumpang
+                    </h2>
 
-<tr>
-<td>Email</td>
-<td><?= $email ?></td>
-</tr>
+                    <table>
 
-</table>
+                        <tr>
+                            <td>Titel</td>
+                            <td><?= $titel ?></td>
+                        </tr>
 
-</div>
+                        <tr>
+                            <td>Nama</td>
+                            <td><?= $nama_penumpang ?></td>
+                        </tr>
 
-<div class="card">
+                        <tr>
+                            <td>Jenis Identitas</td>
+                            <td><?= $jenis_id ?></td>
+                        </tr>
 
-<h2>
+                        <tr>
+                            <td>Nomor Identitas</td>
+                            <td><?= $nomor_id ?></td>
+                        </tr>
 
-<i class="fa-solid fa-id-card"></i>
+                        <tr>
+                            <td>Usia</td>
+                            <td><?= $usia ?> Tahun</td>
+                        </tr>
 
-Data Penumpang
+                        <tr>
+                            <td>Kota</td>
+                            <td><?= $kota ?></td>
+                        </tr>
 
-</h2>
+                    </table>
 
-<table>
+                </div>
 
-<tr>
+                <div class="agreement">
+                    <label>
+                        <input type="checkbox" required>
+                        Saya menyatakan bahwa seluruh data yang diisi sudah benar dan sesuai dengan identitas asli.
+                    </label>
+                </div>
 
-<td>Titel</td>
+                <div class="button-group">
 
-<td><?= $titel ?></td>
+                    <button
+                        type="button"
+                        class="btn-back"
+                        onclick="history.back()">
+                        Kembali
+                    </button>
 
-</tr>
+                    <button
+                        type="submit"
+                        class="btn-next">
+                        Lanjut Pembayaran
+                    </button>
 
-<tr>
+                </div>
 
-<td>Nama</td>
+            </div>
 
-<td><?= $nama_penumpang ?></td>
+            <!-- RIGHT -->
+            <div class="right">
 
-</tr>
+                <div class="summary">
 
-<tr>
+                    <h2>Detail Perjalanan</h2>
 
-<td>Jenis Identitas</td>
+                    <div class="ship">
 
-<td><?= $jenis_id ?></td>
+                        <i class="fa-solid fa-ship"></i>
 
-</tr>
+                        <div>
+                            <h3><?= $kapal ?></h3>
+                            <span><?= $kelas ?></span>
+                        </div>
 
-<tr>
+                    </div>
 
-<td>Nomor Identitas</td>
+                    <hr>
 
-<td><?= $nomor_id ?></td>
+                    <div class="detail">
+                        <span>Rute</span>
+                        <strong><?= $asal ?> → <?= $tujuan ?></strong>
+                    </div>
 
-</tr>
+                    <div class="detail">
+                        <span>Tanggal</span>
+                        <strong><?= $tanggal ?></strong>
+                    </div>
 
-<tr>
+                    <div class="detail">
+                        <span>Berangkat</span>
+                        <strong><?= $jam_berangkat ?></strong>
+                    </div>
 
-<td>Usia</td>
+                    <div class="detail">
+                        <span>Tiba</span>
+                        <strong><?= $jam_tiba ?></strong>
+                    </div>
 
-<td><?= $usia ?> Tahun</td>
+                    <hr>
 
-</tr>
+                    <div class="detail">
+                        <span>Harga Tiket</span>
+                        <strong>Rp <?= number_format($harga,0,',','.') ?></strong>
+                    </div>
 
-<tr>
+                    <div class="detail">
+                        <span>Biaya Admin</span>
+                        <strong>Rp 2.500</strong>
+                    </div>
 
-<td>Kota</td>
+                    <hr>
 
-<td><?= $kota ?></td>
+                    <div class="total">
+                        <span>Total</span>
+                        <h2>
+                            Rp <?= number_format($harga+2500,0,',','.') ?>
+                        </h2>
+                    </div>
 
-</tr>
+                </div>
 
-</table>
+            </div>
 
-</div>
+        </div>
 
-<div class="agreement">
-
-<label>
-
-<input type="checkbox" required>
-
-Saya menyatakan bahwa seluruh data yang diisi sudah benar dan sesuai dengan identitas asli.
-
-</label>
-
-</div>
-
-<div class="button-group">
-
-<button
-type="button"
-class="btn-back"
-onclick="history.back()">
-
-Kembali
-
-</button>
-
-<button
-type="submit"
-class="btn-next">
-
-Lanjut Pembayaran
-
-</button>
-
-</div>
-
-</div>
-
-<!-- RIGHT -->
-
-<div class="right">
-
-<div class="summary">
-
-<h2>
-
-Detail Perjalanan
-
-</h2>
-
-<div class="ship">
-
-<i class="fa-solid fa-ship"></i>
-
-<div>
-
-<h3><?= $kapal ?></h3>
-
-<span><?= $kelas ?></span>
-
-</div>
-
-</div>
-
-<hr>
-
-<div class="detail">
-
-<span>Rute</span>
-
-<strong><?= $asal ?> → <?= $tujuan ?></strong>
-
-</div>
-
-<div class="detail">
-
-<span>Tanggal</span>
-
-<strong><?= $tanggal ?></strong>
-
-</div>
-
-<div class="detail">
-
-<span>Berangkat</span>
-
-<strong><?= $jam_berangkat ?></strong>
-
-</div>
-
-<div class="detail">
-
-<span>Tiba</span>
-
-<strong><?= $jam_tiba ?></strong>
-
-</div>
-
-<hr>
-
-<div class="detail">
-
-<span>Harga Tiket</span>
-
-<strong>Rp <?= number_format($harga,0,',','.') ?></strong>
-
-</div>
-
-<div class="detail">
-
-<span>Biaya Admin</span>
-
-<strong>Rp 2.500</strong>
-
-</div>
-
-<hr>
-
-<div class="total">
-
-<span>Total</span>
-
-<h2>
-
-Rp <?= number_format($harga+2500,0,',','.') ?>
-
-</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</form>
+    </form>
 
 </div>
 
