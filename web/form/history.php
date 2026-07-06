@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 include "../../database/koneksi.php";
-?>
 
 $id = $_SESSION['user_id'];
 

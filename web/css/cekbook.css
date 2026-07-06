@@ -1,116 +1,345 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+/* ===========================
+   CEK BOOKING - OMBAK BIRU
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
 
-body {
-  background-color: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
+body{
+    background:#f4f7fb;
+    color:#333;
 }
 
-.card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  padding: 24px;
-  width: 100%;
-  max-width: 800px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.booking-container{
+    width:100%;
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
 }
 
-.card-title {
-  color: #1e3a5f;
-  font-size: 1.15rem;
-  margin-bottom: 20px;
-  font-weight: 600;
+.booking-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 }
 
-.booking-form {
-  display: flex;
-  gap: 16px;
-  align-items: flex-end;
+.booking-card h2{
+
+    color:#0F5FAF;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+.booking-card p{
+
+    color:#666;
+
+    margin-bottom:25px;
+
 }
 
-.form-group label {
-  font-size: 0.75rem;
-  color: #4b5563;
-  margin-bottom: 6px;
-  font-weight: 500;
+/* ===========================
+   FORM
+=========================== */
+
+form{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:25px;
+
 }
 
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
+form input{
+
+    flex:1;
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
 }
 
-.input-wrapper .icon {
-  position: absolute;
-  left: 12px;
-  color: #1c6ba0;
-  font-size: 0.9rem;
+form input:focus{
+
+    border-color:#0F5FAF;
+
 }
 
-.input-wrapper input {
-  width: 100%;
-  height: 40px;
-  padding: 10px 10px 10px 36px;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  color: #374151;
-  outline: none;
-  transition: border-color 0.2s;
+form button{
+
+    background:#0F5FAF;
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 28px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:15px;
+
 }
 
-.input-wrapper input:focus {
-  border-color: #1c6ba0;
+form button:hover{
+
+    background:#0b4d90;
+
 }
 
-.input-wrapper input::placeholder {
-  color: #9ca3af;
+/* ===========================
+   ERROR
+=========================== */
+
+.error{
+
+    background:#ffe5e5;
+
+    color:#c62828;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-top:15px;
+
+    font-weight:500;
+
 }
 
-.btn-submit {
-  background-color: #0d63b2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 0 24px;
-  height: 40px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: background-color 0.2s;
-  white-space: nowrap;
+/* ===========================
+   HASIL BOOKING
+=========================== */
+
+.result{
+
+    margin-top:30px;
+
 }
 
-.btn-submit:hover {
-  background-color: #0a4f8f;
+.result h3{
+
+    color:#0F5FAF;
+
+    margin-bottom:20px;
+
 }
 
-@media (max-width: 640px) {
-  .booking-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .btn-submit {
-    margin-top: 10px;
-  }
+.result table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.result table tr{
+
+    border-bottom:1px solid #eee;
+
+}
+
+.result table td{
+
+    padding:15px 10px;
+
+}
+
+.result table td:first-child{
+
+    width:220px;
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.success{
+
+    background:#22c55e;
+
+    color:#fff;
+
+    padding:6px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.waiting{
+
+    background:#f59e0b;
+
+    color:#fff;
+
+    padding:6px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.button-group{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.btn-blue{
+
+    background:#0F5FAF;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-blue:hover{
+
+    background:#0b4d90;
+
+}
+
+.btn-grey{
+
+    background:#ececec;
+
+    color:#333;
+
+    text-decoration:none;
+
+    padding:14px 25px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-grey:hover{
+
+    background:#dcdcdc;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.booking-card{
+
+padding:25px;
+
+}
+
+form{
+
+flex-direction:column;
+
+}
+
+form button{
+
+width:100%;
+
+}
+
+.result table td{
+
+display:block;
+
+width:100%;
+
+padding:10px 0;
+
+}
+
+.result table tr{
+
+display:block;
+
+padding:10px 0;
+
+}
+
+.result table td:first-child{
+
+font-weight:700;
+
+margin-bottom:5px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.btn-blue,
+.btn-grey{
+
+width:100%;
+
+text-align:center;
+
+}
+
 }

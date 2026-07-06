@@ -119,7 +119,7 @@ $foto = "../img/profile.png";
                 <li>
                     <a href="homepage.php">
                         <i class="fa-solid fa-ticket"></i>
-                        Booking
+                        Cek Booking
                     </a>
                 </li>
 
@@ -244,13 +244,13 @@ $foto = "../img/profile.png";
 
             <div class="card-container">
 
-                <a href="booking.php" class="card">
+                <a href="../web/form/cekkbooking.php" class="card">
 
                     <i class="fa-solid fa-ticket"></i>
 
-                    <h3>Booking Tiket</h3>
+                    <h3>Cek Booking</h3>
 
-                    <p>Pesan tiket kapal.</p>
+                    <p>Lihat status booking Anda.</p>
 
                 </a>
 
@@ -260,7 +260,7 @@ $foto = "../img/profile.png";
 
                     <h3>Tiket Saya</h3>
 
-                    <p>Lihat tiket aktif.</p>
+                    <p>Lihat e-ticket yang aktif.</p>
 
                 </a>
 
@@ -270,7 +270,7 @@ $foto = "../img/profile.png";
 
                     <h3>Profil</h3>
 
-                    <p>Edit data akun.</p>
+                    <p>Kelola akun Anda.</p>
 
                 </a>
 

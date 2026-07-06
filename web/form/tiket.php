@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 include "../../database/koneksi.php";
-?>
 
 $id = $_SESSION['user_id'];
 
@@ -20,7 +19,7 @@ $data = mysqli_fetch_assoc($user);
 
 $nama = $data['nama_depan']." ".$data['nama_belakang'];
 $email = $data['email'];
-$foto = "../img/profile-default.png";
+$foto = "../img/profile.png";
 
 /*
 Ambil semua tiket user
@@ -41,239 +40,237 @@ ORDER BY id DESC
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Tiket Saya</title>
+    <title>Tiket Saya</title>
 
-<link rel="stylesheet" href="../css/tiket.css">
+    <link rel="stylesheet" href="../css/tiket.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-<aside class="sidebar">
+        <aside class="sidebar">
 
-<div class="logo">
+            <div class="logo">
 
-<h2>Ombak Biru</h2>
+                <h2>Ombak Biru</h2>
 
-</div>
+            </div>
 
-<div class="profile">
+            <div class="profile">
 
-<img src="<?= $foto ?>">
+                <img src="<?= $foto ?>">
 
-<h3><?= $nama ?></h3>
+                <h3><?= $nama ?></h3>
 
-<p><?= $email ?></p>
+                <p><?= $email ?></p>
 
-</div>
+            </div>
 
-<ul>
+            <ul>
 
-<li>
-<a href="dashboard.php">
-<i class="fa-solid fa-house"></i>
-Dashboard
-</a>
-</li>
+                <li>
+                    <a href="dashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
 
-<li>
-<a href="booking.php">
-<i class="fa-solid fa-ticket"></i>
-Booking
-</a>
-</li>
+                <li>
+                    <a href="booking.php">
+                        <i class="fa-solid fa-ticket"></i>
+                        Booking
+                    </a>
+                </li>
 
-<li class="active">
-<a href="tiket.php">
-<i class="fa-solid fa-ship"></i>
-Tiket Saya
-</a>
-</li>
+                <li class="active">
+                    <a href="tiket.php">
+                        <i class="fa-solid fa-ship"></i>
+                        Tiket Saya
+                    </a>
+                </li>
 
-<li>
-<a href="history.php">
-<i class="fa-solid fa-clock-rotate-left"></i>
-Riwayat
-</a>
-</li>
+                <li>
+                    <a href="history.php">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Riwayat
+                    </a>
+                </li>
 
-<li>
-<a href="profile.php">
-<i class="fa-solid fa-user"></i>
-Profil
-</a>
-</li>
+                <li>
+                    <a href="profile.php">
+                        <i class="fa-solid fa-user"></i>
+                        Profil
+                    </a>
+                </li>
 
-</ul>
+            </ul>
 
-<a href="logout.php" class="logout">
+            <a href="logout.php" class="logout">
 
-<i class="fa-solid fa-right-from-bracket"></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
 
-Logout
+                Logout
 
-</a>
+            </a>
 
-</aside>
+        </aside>
 
-<!-- CONTENT -->
+        <!-- CONTENT -->
 
-<main class="main">
+        <main class="main">
 
-<div class="topbar">
+            <div class="topbar">
 
-<h2>Tiket Saya</h2>
+                <h2>Tiket Saya</h2>
 
-<div class="user">
+                <div class="user">
 
-<img src="<?= $foto ?>">
+                    <img src="<?= $foto ?>">
 
-<?= $nama ?>
+                    <?= $nama ?>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="page-title">
+            <div class="page-title">
 
-<h1>Daftar Tiket</h1>
+                <h1>Tiket Saya</h1>
 
-<p>Tiket aktif yang telah Anda pesan.</p>
+                <p>Tiket aktif yang telah Anda pesan.</p>
 
-</div>
+            </div>
 
-<div class="ticket-list">
+            <div class="ticket-list">
 
-<?php
+                <?php
 
-if(mysqli_num_rows($tiket)>0){
+                if (mysqli_num_rows($tiket) > 0) {
 
-while($row=mysqli_fetch_assoc($tiket)){
+                    while ($row = mysqli_fetch_assoc($tiket)) {
 
-?>
+                        ?>
 
-<div class="ticket-card">
+                        <div class="ticket-card">
 
-<div class="ticket-header">
+                            <div class="ticket-header">
 
-<div>
+                                <div>
 
-<h2><?= $row['kapal']; ?></h2>
+                                    <h2><?= $row['kapal']; ?></h2>
 
-<p>
+                                    <p>
 
-<?= $row['asal']; ?>
+                                        <?= $row['asal']; ?>
 
-<i class="fa-solid fa-arrow-right"></i>
+                                        <i class="fa-solid fa-arrow-right"></i>
 
-<?= $row['tujuan']; ?>
+                                        <?= $row['tujuan']; ?>
 
-</p>
+                                    </p>
 
-</div>
+                                </div>
 
-<span class="status">
+                                <span class="status">
 
-<?= $row['status']; ?>
+                                    <?= $row['status']; ?>
 
-</span>
+                                </span>
 
-</div>
+                            </div>
 
-<hr>
+                            <hr>
 
-<div class="ticket-detail">
+                            <div class="ticket-detail">
 
-<div>
+                                <div>
 
-<label>Tanggal</label>
+                                    <label>Tanggal</label>
 
-<p><?= $row['tanggal']; ?></p>
+                                    <p><?= $row['tanggal']; ?></p>
 
-</div>
+                                </div>
 
-<div>
+                                <div>
 
-<label>Berangkat</label>
+                                    <label>Berangkat</label>
 
-<p><?= $row['jam_berangkat']; ?></p>
+                                    <p><?= $row['jam_berangkat']; ?></p>
 
-</div>
+                                </div>
 
-<div>
+                                <div>
 
-<label>Tiba</label>
+                                    <label>Tiba</label>
 
-<p><?= $row['jam_tiba']; ?></p>
+                                    <p><?= $row['jam_tiba']; ?></p>
 
-</div>
+                                </div>
 
-<div>
+                                <div>
 
-<label>Total</label>
+                                    <label>Total</label>
 
-<p>
+                                    <p>
 
-Rp <?= number_format($row['total'],0,',','.'); ?>
+                                        Rp <?= number_format($row['total'], 0, ',', '.'); ?>
 
-</p>
+                                    </p>
 
-</div>
+                                </div>
 
-</div>
+                            </div>
 
-<a
-href="e-tiket.php?id=<?= $row['id']; ?>"
-class="btn-ticket">
+                            <a href="e-tiket.php?id=<?= $row['id']; ?>" class="btn-ticket">
 
-Lihat E-Tiket
+                                Lihat E-Tiket
 
-</a>
+                            </a>
 
-</div>
+                        </div>
 
-<?php
+                        <?php
 
-}
+                    }
 
-}else{
+                } else {
 
-?>
+                    ?>
 
-<div class="empty">
+                    <div class="empty">
 
-<i class="fa-solid fa-ticket"></i>
+                        <i class="fa-solid fa-ticket"></i>
 
-<h2>Belum Ada Tiket</h2>
+                        <h2>Belum Ada Tiket</h2>
 
-<p>Anda belum melakukan pemesanan tiket.</p>
+                        <p>Anda belum melakukan pemesanan tiket.</p>
 
-<a href="homepage.php">
+                        <a href="homepage.php">
 
-Booking Sekarang
+                            Booking Sekarang
 
-</a>
+                        </a>
 
-</div>
+                    </div>
 
-<?php } ?>
+                <?php } ?>
 
-</div>
+            </div>
 
-</main>
+        </main>
 
-</div>
+    </div>
 
 </body>
 
