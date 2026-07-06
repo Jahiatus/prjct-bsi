@@ -257,7 +257,7 @@ Rp <?= number_format($total,0,',','.') ?>
 
 </div>
 
-<form action="tiket.php" method="POST">
+<form action="e-tiket.php" method="POST">
 
 <?php
 foreach($_POST as $key=>$value){

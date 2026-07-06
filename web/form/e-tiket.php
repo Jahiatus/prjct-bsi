@@ -286,7 +286,7 @@ Rp <?= number_format($total,0,',','.') ?>
 
         <h3>Scan Saat Check-in</h3>
 
-        <img src="../img/qris.png" alt="QR Code">
+        <img src="../img/qr.png" alt="QR Code">
 
         <p><?= $booking ?></p>
 
