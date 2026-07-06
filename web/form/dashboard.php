@@ -117,7 +117,7 @@ $foto = "../img/profile.png";
                 </li>
 
                 <li>
-                    <a href="homepage.php">
+                    <a href="cekbooking.php">
                         <i class="fa-solid fa-ticket"></i>
                         Cek Booking
                     </a>
@@ -244,7 +244,7 @@ $foto = "../img/profile.png";
 
             <div class="card-container">
 
-                <a href="../web/form/cekkbooking.php" class="card">
+                <a href="cekbooking.php" class="card">
 
                     <i class="fa-solid fa-ticket"></i>
 
