@@ -1,6 +1,12 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="UTF-8">
@@ -40,155 +46,90 @@ session_start();
       </section>
 
       <!-- BOOKING CARD -->
-      <section class="booking-card" id="booking-card">
-        <div class="tabs">
-          <div class="tab active" data-tab="penumpang">
-            <i class="fa-solid fa-ship"></i>
-            Penumpang & Kendaraan
-          </div>
+<section class="booking-card" id="booking-card">
+<form action="jadwal.php" method="GET">
+    <h2 class="booking-title">Cari Tiket Anda</h2>
+    <p class="booking-subtitle">
+        Atur jadwal keberangkatan Anda di Pelabuhan
+    </p>
 
-          <div class="tab" data-tab="pengiriman">
-            <i class="fa-solid fa-truck"></i>
-            Pengiriman Barang
-          </div>
+    <div class="booking-grid">
+
+        <!-- Pelabuhan Asal -->
+        <div class="form-group">
+            <label>Pelabuhan Asal</label>
+
+            <select id="asal" name="asal">
+                <option value="merak">Merak, Banten</option>
+                <option value="bakauheni">Bakauheni, Lampung</option>
+                <option value="gilimanuk">Gilimanuk, Bali</option>
+                <option value="ketapang">Ketapang, Jawa Timur</option>
+            </select>
         </div>
 
-        <!-- content for Penumpang & Kendaraan -->
-        <div id="penumpang-form-content">
-          <div class="form-grid">
-            <div class="form-group">
-              <label>Asal</label>
-              <select>
-                <option>Pelabuhan Merak, Banten</option>
-                <option>Pelabuhan Bakauheni, Lampung</option>
-                <option>Pelabuhan Ketapang, Banyuwangi</option>
-                <option>Pelabuhan Gilimanuk, Bali</option>
-              </select>
-            </div>
+        <!-- Kelas -->
+        <div class="form-group">
+            <label>Kelas Layanan</label>
 
-            <div class="form-group">
-              <label>Tujuan</label>
-              <select>
-                <option>Pelabuhan Bakauheni, Lampung</option>
-                <option>Pelabuhan Merak, Banten</option>
-                <option>Pelabuhan Ketapang, Banyuwangi</option>
-                <option>Pelabuhan Gilimanuk, Bali</option>
-              </select>
-            </div>
+            <select name="kelas" required>
+                <option value="">Pilih Kelas</option>
+                <option value="Reguler">Reguler</option>
+                <option value="Eksekutif">Eksekutif</option>
+            </select>
+        </div>
+        <!-- Tanggal -->
+        <div class="form-group">
+            <label>Tanggal Masuk Pelabuhan</label>
+            <input
+              type="date"
+              name="tanggal"
+              required
+            >
+        </div>
+        <!-- Tujuan -->
+        <div class="form-group">
+            <label>Pelabuhan Tujuan</label>
 
-            <div class="form-group">
-              <label>Tanggal Keberangkatan</label>
-              <input type="date" />
-            </div>
+            <select id="tujuan" name="tujuan">
 
-            <div class="form-group">
-              <label>Kelas Layanan</label>
-              <select>
-                <option>Eksekutif</option>
-                <option>Reguler</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Dewasa</label>
-              <input type="number" value="1" min="1" />
-            </div>
-
-            <div class="form-group">
-              <label>Anak</label>
-              <input type="number" value="0" min="0" />
-            </div>
-          </div>
-
-          <div class="vehicle-list">
-            <button class="vehicle active">
-              <i class="fa-solid fa-person"></i>
-              Pejalan Kaki
-            </button>
-
-            <button class="vehicle">
-              <i class="fa-solid fa-motorcycle"></i>
-              Motor
-            </button>
-
-            <button class="vehicle">
-              <i class="fa-solid fa-car"></i>
-              Mobil
-            </button>
-
-            <button class="vehicle">
-              <i class="fa-solid fa-truck"></i>
-              Truk / Bus
-            </button>
-          </div>
-
-          <button class="search-btn" onclick="cekLogin()">
-            Cari Jadwal Feri
-          </button>
+            </select>
         </div>
 
-        <!-- content for Pengiriman Barang -->
-        <div id="pengiriman-form-content" style="display: none">
-          <div class="form-grid">
-            <div class="form-group">
-              <label>Nama Pengirim</label>
-              <input type="text" placeholder="Masukkan nama pengirim" />
-            </div>
+        <!-- Jenis -->
+        <div class="form-group">
+            <label>Jenis Pengguna Jasa</label>
 
-            <div class="form-group">
-              <label>Nama Barang</label>
-              <input type="text" placeholder="Masukkan nama barang" />
-            </div>
-
-            <div class="form-group">
-              <label>Berat (kg)</label>
-              <input
-                type="number"
-                value="1"
-                min="1"
-                placeholder="Berat dalam kg"
-              />
-            </div>
-
-            <div class="form-group">
-              <label>Kelas Layanan</label>
-              <select>
-                <option>Eksekutif</option>
-                <option>Reguler</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Asal</label>
-              <select>
-                <option>Pelabuhan Merak, Banten</option>
-                <option>Pelabuhan Bakauheni, Lampung</option>
-                <option>Pelabuhan Ketapang, Banyuwangi</option>
-                <option>Pelabuhan Gilimanuk, Bali</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Tujuan</label>
-              <select>
-                <option>Pelabuhan Bakauheni, Lampung</option>
-                <option>Pelabuhan Merak, Banten</option>
-                <option>Pelabuhan Ketapang, Banyuwangi</option>
-                <option>Pelabuhan Gilimanuk, Bali</option>
-              </select>
-            </div>
-          </div>
-
-          <button 
-          class="search-btn" 
-          style="margin-top: 30px"
-          onclick="cekLogin()">
-
-          Cari Layanan Pengiriman →
-
-          </button>
+            <select>
+                <option>Jalan Kaki</option>
+                <option>Berkendara</option>
+            </select>
         </div>
-      </section>
+
+        <!-- Penumpang -->
+        <div class="form-group">
+            <label>Penumpang</label>
+
+            <select>
+                <option>1 Dewasa</option>
+                <option>2 Dewasa</option>
+                <option>2 Dewasa, 1 Anak</option>
+                <option>2 Dewasa, 2 Anak</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="booking-btn">
+
+        <button type="submit">
+            Cari Jadwal
+        </button>
+
+    </div>
+</form>
+
+</section>
+
 
       <!-- PROMO -->
       <section class="promo-section">
@@ -280,49 +221,60 @@ session_start();
     </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Tab Selector Switcher
-        const tabs = document.querySelectorAll(".tab");
-        const penumpangContent = document.getElementById(
-          "penumpang-form-content"
-        );
-        const pengirimanContent = document.getElementById(
-          "pengiriman-form-content"
-        );
+document.addEventListener("DOMContentLoaded", function () {
 
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => {
-            // Remove active class from all tabs
-            tabs.forEach((t) => t.classList.remove("active"));
-            // Add active class to clicked tab
-            tab.classList.add("active");
+    const asal = document.getElementById("asal");
+    const tujuan = document.getElementById("tujuan");
 
-            // Switch form content based on selected tab data-tab
-            const selectedTab = tab.getAttribute("data-tab");
-            if (selectedTab === "penumpang") {
-              penumpangContent.style.display = "block";
-              pengirimanContent.style.display = "none";
-            } else if (selectedTab === "pengiriman") {
-              penumpangContent.style.display = "none";
-              pengirimanContent.style.display = "block";
-            }
-          });
-        });
+    function updateTujuan() {
 
-        // Vehicle Selector Switcher (Penumpang Form)
-        const vehicles = document.querySelectorAll(".vehicle");
-        vehicles.forEach((vehicle) => {
-          vehicle.addEventListener("click", () => {
-            vehicles.forEach((v) => v.classList.remove("active"));
-            vehicle.classList.add("active");
-          });
-        });
-      });
-    </script>
+        switch (asal.value) {
+
+            case "merak":
+                tujuan.innerHTML =
+                    "<option value='bakauheni'>Pelabuhan Bakauheni, Lampung</option>";
+                break;
+
+            case "bakauheni":
+                tujuan.innerHTML =
+                    "<option value='merak'>Pelabuhan Merak, Banten</option>";
+                break;
+
+            case "gilimanuk":
+                tujuan.innerHTML =
+                    "<option value='ketapang'>Pelabuhan Ketapang, Jawa Timur</option>";
+                break;
+
+            case "ketapang":
+                tujuan.innerHTML =
+                    "<option value='gilimanuk'>Pelabuhan Gilimanuk, Bali</option>";
+                break;
+        }
+
+    }
+
+    updateTujuan();
+
+    asal.addEventListener("change", updateTujuan);
+
+});
 
 
-<script>
+function cekLogin(){
 
+<?php if(isset($_SESSION['user_id'])){ ?>
+
+    window.location="jadwal.php";
+
+<?php }else{ ?>
+
+    window.location="login.php";
+
+<?php } ?>
+
+}
+</script>
+</script>
 function cekLogin(){
 
     <?php if(isset($_SESSION['user_id'])){ ?>

@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <link rel="stylesheet" href="../css/header.css" />
 
 <header class="main-header">
@@ -33,13 +38,23 @@
 
       <div class="user-profile">
         <?php if(isset($_SESSION['nama'])): ?>
-        <a href="../form/dashboard.php" class="login-link" style="text-decoration: none;">
-          <span class="user-name" style="text-transform: uppercase;"> <?php echo htmlspecialchars($_SESSION['nama']); ?> </span>
+        <a
+          href="../form/dashboard.php"
+          class="login-link"
+          style="text-decoration: none"
+        >
+          <span class="user-name" style="text-transform: uppercase">
+            <?php echo htmlspecialchars($_SESSION['nama']); ?>
+          </span>
         </a>
 
         <div class="user-photo-container">
           <a href="../form/dashboard.php">
-            <img src="../img/profile.png" alt="User Profile" class="user-photo" />
+            <img
+              src="../img/profile.png"
+              alt="User Profile"
+              class="user-photo"
+            />
           </a>
         </div>
         <?php else: ?>

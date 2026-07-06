@@ -1,0 +1,609 @@
+/* ===========================
+   OMBAK BIRU - PEMESANAN
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#222;
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.booking-container{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto;
+}
+
+/* ===========================
+   STEPPER
+=========================== */
+
+.stepper{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+}
+
+.step{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.circle{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:#d9d9d9;
+
+    color:#fff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.step.active .circle{
+
+    background:#0F5FAF;
+
+}
+
+.step span{
+
+    margin-top:8px;
+    font-size:14px;
+    font-weight:500;
+
+}
+
+.line{
+
+    width:100px;
+    height:3px;
+
+    background:#d9d9d9;
+
+    margin:0 15px;
+
+}
+
+/* ===========================
+   CONTENT
+=========================== */
+
+.content{
+
+    display:grid;
+    grid-template-columns:2fr 1fr;
+
+    gap:30px;
+
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+.card h2{
+
+    color:#0F5FAF;
+
+    margin-bottom:25px;
+
+    font-size:23px;
+
+}
+
+.card h2 i{
+
+    margin-right:8px;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+.form-group{
+
+    display:flex;
+    flex-direction:column;
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.form-group input,
+.form-group select{
+
+    height:50px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:10px;
+
+    padding:0 15px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border-color:#0F5FAF;
+
+    box-shadow:0 0 0 3px rgba(15,95,175,.15);
+
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+/* ===========================
+   INFO BOX
+=========================== */
+
+.info-box{
+
+    display:flex;
+
+    gap:20px;
+
+    background:#EAF4FF;
+
+    border-left:5px solid #0F5FAF;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    margin-bottom:25px;
+
+}
+
+.info-box i{
+
+    font-size:35px;
+
+    color:#0F5FAF;
+
+}
+
+.info-box h4{
+
+    margin-bottom:12px;
+
+}
+
+.info-box ul{
+
+    padding-left:18px;
+
+}
+
+.info-box li{
+
+    margin-bottom:8px;
+
+    color:#555;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.button-area{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.btn-back{
+
+    text-decoration:none;
+
+    padding:14px 35px;
+
+    border-radius:10px;
+
+    background:#ddd;
+
+    color:#333;
+
+    font-weight:600;
+
+}
+
+.btn-back:hover{
+
+    background:#c9c9c9;
+
+}
+
+.btn-next{
+
+    border:none;
+
+    background:#0F5FAF;
+
+    color:#fff;
+
+    padding:14px 45px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-next:hover{
+
+    background:#094c90;
+
+}
+
+/* ===========================
+   RIGHT
+=========================== */
+
+.right-content{
+
+    position:relative;
+
+}
+
+.summary{
+
+    position:sticky;
+
+    top:100px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+}
+
+.summary h2{
+
+    color:#0F5FAF;
+
+    margin-bottom:25px;
+
+}
+
+.route{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.route i{
+
+    color:#0F5FAF;
+
+    font-size:20px;
+
+}
+
+.summary hr{
+
+    border:none;
+
+    border-top:1px solid #ececec;
+
+    margin:20px 0;
+
+}
+
+.summary p{
+
+    color:#888;
+
+    margin-top:15px;
+
+}
+
+.summary span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-weight:600;
+
+}
+
+.total{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.total h2{
+
+    color:#0F5FAF;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:991px){
+
+.content{
+
+grid-template-columns:1fr;
+
+}
+
+.summary{
+
+position:static;
+
+}
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.line{
+
+display:none;
+
+}
+
+.stepper{
+
+gap:15px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.booking-container{
+
+width:95%;
+
+}
+
+.card{
+
+padding:20px;
+
+}
+
+.summary{
+
+padding:20px;
+
+}
+
+.button-area{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.btn-back,
+.btn-next{
+
+width:100%;
+
+text-align:center;
+
+}
+
+}
+
+.ship-box{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.ship-icon{
+
+font-size:45px;
+
+color:#0F5FAF;
+
+}
+
+.badge{
+
+display:inline-block;
+
+margin-top:8px;
+
+background:#0F5FAF;
+
+color:white;
+
+padding:6px 15px;
+
+border-radius:30px;
+
+font-size:13px;
+
+}
+
+.route-box{
+
+background:#f8fbff;
+
+padding:18px;
+
+border-radius:15px;
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+.route-box i{
+
+margin:15px 0;
+
+font-size:25px;
+
+color:#0F5FAF;
+
+}
+
+.route-box small{
+
+color:#888;
+
+}
+
+.route-box h4{
+
+margin-top:5px;
+
+}
+
+.info-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+margin-bottom:20px;
+
+}
+
+.info-list div{
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+.price-row{
+
+display:flex;
+
+justify-content:space-between;
+
+margin:15px 0;
+
+}
+
+.grand-total{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:20px;
+
+}
+
+.grand-total h2{
+
+color:#0F5FAF;
+
+font-size:30px;
+
+}

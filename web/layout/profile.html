@@ -1,0 +1,42 @@
+<div class="profile-card">
+
+<h2>Profile Saya</h2>
+
+<form method="POST">
+
+<label>Nama Depan</label>
+<input type="text"
+name="nama_depan"
+value="<?= $user['nama_depan']?>">
+
+<label>Nama Belakang</label>
+<input type="text"
+name="nama_belakang"
+value="<?= $user['nama_belakang']?>">
+
+<label>Email</label>
+<input type="email"
+name="email"
+value="<?= $user['email']?>">
+
+<label>No Telepon</label>
+<input type="text"
+name="telepon"
+value="<?= $user['telepon']?>">
+
+<label>Password Baru</label>
+<input type="password"
+name="password"
+placeholder="Kosongkan jika tidak diubah">
+
+<button
+type="submit"
+name="simpan">
+
+Simpan Perubahan
+
+</button>
+
+</form>
+
+</div>

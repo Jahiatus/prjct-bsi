@@ -6,30 +6,61 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include "../database/koneksi.php";
-
-/*
-Mengambil data terbaru dari database
-supaya kalau profile diubah,
-dashboard langsung ikut berubah.
-*/
+include "../../database/koneksi.php";
 
 $id = $_SESSION['user_id'];
+$total = mysqli_fetch_assoc(mysqli_query($koneksi,"
+SELECT COUNT(*) total
+FROM tiket
+WHERE user_id='$id'
+"));
 
-$query = mysqli_query($koneksi,
-"SELECT * FROM users WHERE id='$id'");
+$aktif = mysqli_fetch_assoc(mysqli_query($koneksi,"
+SELECT COUNT(*) aktif
+FROM tiket
+WHERE user_id='$id'
+AND status='Lunas'
+"));
 
-$data = mysqli_fetch_assoc($query);
+$history = mysqli_fetch_assoc(mysqli_query($koneksi,"
+SELECT COUNT(*) history
+FROM tiket
+WHERE user_id='$id'
+"));
 
-$nama = $data['nama_depan']." ".$data['nama_belakang'];
-$email = $data['email'];
+$last = mysqli_query($koneksi,"
+SELECT *
+FROM tiket
+WHERE user_id='$id'
+ORDER BY id DESC
+LIMIT 1
+");
+
+$data = mysqli_fetch_assoc($last);
+
+$query = mysqli_query($koneksi,"
+SELECT *
+FROM users
+WHERE id='$id'
+");
+
+$user = mysqli_fetch_assoc($query);
+
+if (!$user) {
+    die("Data user tidak ditemukan.");
+}
+
+$nama = $user['nama_depan'] . " " . $user['nama_belakang'];
+$email = $user['email'];
+
+$lastTicket = mysqli_fetch_assoc($last);
 
 /*
 Kalau nanti ada foto profile di database
 tinggal ganti bagian ini
 */
 
-$foto = "../img/profile-default.png";
+$foto = "../img/profile.png";
 ?>
 
 <!DOCTYPE html>
@@ -37,157 +68,217 @@ $foto = "../img/profile-default.png";
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<title>Dashboard Pengguna</title>
+    <title>Dashboard Pengguna</title>
 
-<link rel="stylesheet" href="../css/dasboard.css">
+    <link rel="stylesheet" href="../css/dasboard.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Sidebar -->
+        <!-- Sidebar -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <div class="logo">
+            <div class="logo">
 
-            <h2>Ombak Biru</h2>
-
-        </div>
-
-        <div class="profile">
-
-            <img src="<?= $foto ?>">
-
-            <h3><?= $nama ?></h3>
-
-            <p><?= $email ?></p>
-
-        </div>
-
-        <ul>
-
-            <li class="active">
-                <a href="dashboard.php">
-                    <i class="fa-solid fa-house"></i>
-                    Dashboard
-                </a>
-            </li>
-
-            <li>
-                <a href="booking.php">
-                    <i class="fa-solid fa-ticket"></i>
-                    Booking
-                </a>
-            </li>
-
-            <li>
-                <a href="tiket.php">
-                    <i class="fa-solid fa-ship"></i>
-                    Tiket Saya
-                </a>
-            </li>
-
-            <li>
-                <a href="history.php">
-                    <i class="fa-solid fa-clock-rotate-left"></i>
-                    Riwayat
-                </a>
-            </li>
-
-            <li>
-                <a href="profile.php">
-                    <i class="fa-solid fa-user"></i>
-                    Profile
-                </a>
-            </li>
-
-        </ul>
-
-        <a class="logout" href="logout.php">
-
-            <i class="fa-solid fa-right-from-bracket"></i>
-
-            Logout
-
-        </a>
-
-    </aside>
-
-    <!-- Content -->
-
-    <main class="main">
-
-        <div class="topbar">
-
-            <h2>Dashboard</h2>
-
-            <div class="user">
-
-                <img src="<?= $foto ?>">
-
-                <?= $nama ?>
+                <h2>Ombak Biru</h2>
 
             </div>
 
-        </div>
+            <div class="profile">
 
-        <div class="welcome">
+                <img src="<?= $foto ?>">
 
-            <h1>Selamat Datang, <?= $nama ?></h1>
+                <h3><?= $nama ?></h3>
 
-            <p>Kelola pemesanan tiket kapal laut Anda di sini.</p>
+                <p><?= $email ?></p>
 
-        </div>
+            </div>
 
-        <div class="card-container">
+            <ul>
 
-            <a href="booking.php" class="card">
+                <li class="active">
+                    <a href="dashboard.php">
+                        <i class="fa-solid fa-house"></i>
+                        Dashboard
+                    </a>
+                </li>
 
-                <i class="fa-solid fa-ticket"></i>
+                <li>
+                    <a href="homepage.php">
+                        <i class="fa-solid fa-ticket"></i>
+                        Booking
+                    </a>
+                </li>
 
-                <h3>Booking Tiket</h3>
+                <li>
+                    <a href="tiket.php">
+                        <i class="fa-solid fa-ship"></i>
+                        Tiket Saya
+                    </a>
+                </li>
 
-                <p>Pesan tiket kapal.</p>
+                <li>
+                    <a href="history.php">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                        Riwayat
+                    </a>
+                </li>
+
+                <li>
+                    <a href="profile.php">
+                        <i class="fa-solid fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+
+            </ul>
+
+            <a class="logout" href="logout.php">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
 
             </a>
 
-            <a href="tiket.php" class="card">
+        </aside>
 
-                <i class="fa-solid fa-ship"></i>
+        <!-- Content -->
 
-                <h3>Tiket Saya</h3>
+        <main class="main">
 
-                <p>Lihat tiket aktif.</p>
+            <div class="topbar">
 
-            </a>
+                <h2>Dashboard</h2>
 
-            <a href="profile.php" class="card">
+                <div class="user">
 
-                <i class="fa-solid fa-user"></i>
+                    <img src="<?= $foto ?>">
 
-                <h3>Profil</h3>
+                    <?= $nama ?>
 
-                <p>Edit data akun.</p>
+                </div>
 
-            </a>
+            </div>
 
-        </div>
+            <div class="welcome">
 
-    </main>
+                <h1>Selamat Datang, <?= $nama ?></h1>
 
-</div>
+                <p>Kelola pemesanan tiket kapal laut Anda di sini.</p>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="box">
+
+                    <h3><?= $total['total'] ?></h3>
+
+                    <p>Total Tiket</p>
+
+                </div>
+
+                <div class="box">
+
+                    <h3><?= $aktif['aktif'] ?></h3>
+
+                    <p>Tiket Aktif</p>
+
+                </div>
+
+                <div class="box">
+
+                    <h3><?= $history['history'] ?></h3>
+
+                    <p>Riwayat Perjalanan</p>
+
+                </div>
+
+            </div>
+
+            <div class="last-ticket">
+
+                <h2>Perjalanan Terakhir</h2>
+
+                <?php if($lastTicket){ ?>
+
+                    <div class="ticket-info">
+
+                        <h3><?= $lastTicket['asal'] ?> → <?= $lastTicket['tujuan'] ?></h3>
+
+                        <p>
+                            <?= $lastTicket['tanggal'] ?>
+                            |
+                            <?= $lastTicket['jam_berangkat'] ?>
+                        </p>
+
+                        <p><?= $lastTicket['kapal'] ?></p>
+
+                        <strong>
+                            Rp <?= number_format($lastTicket['total'], 0, ',', '.') ?>
+                        </strong>
+
+                    </div>
+
+                <?php } else { ?>
+
+                    <p>Belum ada tiket yang dipesan.</p>
+
+                <?php } ?>
+
+            </div>
+
+            <div class="card-container">
+
+                <a href="booking.php" class="card">
+
+                    <i class="fa-solid fa-ticket"></i>
+
+                    <h3>Booking Tiket</h3>
+
+                    <p>Pesan tiket kapal.</p>
+
+                </a>
+
+                <a href="tiket.php" class="card">
+
+                    <i class="fa-solid fa-ship"></i>
+
+                    <h3>Tiket Saya</h3>
+
+                    <p>Lihat tiket aktif.</p>
+
+                </a>
+
+                <a href="profile.php" class="card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <h3>Profil</h3>
+
+                    <p>Edit data akun.</p>
+
+                </a>
+
+            </div>
+
+        </main>
+
+    </div>
 
 </body>
 
