@@ -112,7 +112,7 @@ $query = mysqli_query(
                             <h3 class="price">
                                 Rp <?= number_format($kapal['harga']); ?>
                             </h3>
-                            <form action="pemesan.php" method="POST">
+                            <form action="pemesanan.php" method="POST">
 
                                 <input type="hidden" name="kapal" value="<?= $kapal['nama_kapal']; ?>">
                                 <input type="hidden" name="kelas" value="<?= $kapal['kelas']; ?>">
