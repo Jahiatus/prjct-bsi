@@ -476,35 +476,99 @@ text-align:center;
 }
 
 }
+/* ==========================
+   PRINT PDF A4
+========================== */
+
+@page{
+    size:A4 portrait;
+    margin:8mm;
+}
+
 @media print{
 
-body{
+    body{
+        background:#fff !important;
+        color:#000;
+    }
 
-background:white;
+    header,
+    footer,
+    .stepper,
+    .button-group{
+        display:none !important;
+    }
 
-}
+    .container{
+        width:100%;
+        margin:0;
+        padding:0;
+    }
 
-.stepper,
-.button-group,
-header,
-footer{
+    .ticket-card{
 
-display:none;
+        width:100%;
+        max-width:100%;
 
-}
+        margin:0;
 
-.ticket-card{
+        padding:18px;
 
-box-shadow:none;
+        border:none;
 
-border:1px solid #ccc;
+        border-radius:0;
 
-margin:0 auto;
+        box-shadow:none;
 
-width:100%;
+        page-break-inside:avoid;
+    }
 
-max-width:100%;
+    .ticket-header h1{
+        font-size:24px;
+    }
 
-}
+    h2{
+        font-size:18px;
+        margin-bottom:8px;
+    }
+
+    h3{
+        font-size:15px;
+    }
+
+    p,
+    label,
+    li,
+    small{
+        font-size:11px;
+    }
+
+    .booking-box{
+        padding:12px;
+        margin-bottom:12px;
+    }
+
+    hr{
+        margin:12px 0;
+    }
+
+    .trip-grid,
+    .info-grid{
+        gap:8px;
+    }
+
+    .info-item{
+        padding:10px;
+    }
+
+    .barcode img{
+        width:120px;
+        padding:5px;
+    }
+
+    .important{
+        margin-top:12px;
+        padding:12px;
+    }
 
 }
