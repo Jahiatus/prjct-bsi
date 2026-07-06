@@ -63,7 +63,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <body>
 
-<?php include __DIR__.'/header.php'; ?>
+<?php include __DIR__.'/../layout/hdr.html'; ?>
 
 <div class="payment-page">
 
