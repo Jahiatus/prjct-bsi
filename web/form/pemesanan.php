@@ -34,7 +34,7 @@ $harga = $_POST['harga'] ?? '';
 
 <body>
 
-    <?php include __DIR__ . '/../form/header.php'; ?>
+    <?php include __DIR__ . '/../layout/hdr.html'; ?>
 
     <div class="booking-container">
 
