@@ -65,7 +65,7 @@ $foto = "../img/profile.png";
 
     <title>Dashboard Pengguna</title>
 
-    <link rel="stylesheet" href="../css/dasboard.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 

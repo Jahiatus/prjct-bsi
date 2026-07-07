@@ -10,25 +10,23 @@ include "../../database/koneksi.php";
 
 $id = $_SESSION['user_id'];
 
-/* data user */
-$user = mysqli_query($koneksi,"SELECT * FROM users WHERE id='$id'");
+/* Ambil data user */
+$user = mysqli_query($koneksi, "SELECT * FROM users WHERE id='$id'");
 $u = mysqli_fetch_assoc($user);
 
-$nama = $u['nama_depan']." ".$u['nama_belakang'];
+$nama = $u['nama_depan'] . " " . $u['nama_belakang'];
 $email = $u['email'];
+$foto = "../img/profile.png";
 
-$foto="../img/profile.png";
-
-/* ambil history booking */
-
-$history = mysqli_query($koneksi,"
+/* Ambil riwayat */
+$history = mysqli_query($koneksi, "
 SELECT *
 FROM booking
 WHERE user_id='$id'
 ORDER BY id DESC
 ");
-
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -38,9 +36,10 @@ ORDER BY id DESC
 
 <title>Riwayat Perjalanan</title>
 
-<link rel="stylesheet" href="../css/history.css">
+<link rel="stylesheet" href="../css/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -55,13 +54,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <aside class="sidebar">
 
+<div class="logo">
+    <h2>Ombak Biru</h2>
+</div>
+
 <div class="profile">
 
-<img src="<?= $foto ?>">
+    <img src="<?= $foto ?>">
 
-<h3><?= $nama ?></h3>
+    <h3><?= $nama ?></h3>
 
-<p><?= $email ?></p>
+    <p><?= $email ?></p>
 
 </div>
 
@@ -77,7 +80,7 @@ Dashboard
 <li>
 <a href="booking.php">
 <i class="fa-solid fa-ticket"></i>
-Booking
+Cek Booking
 </a>
 </li>
 
@@ -104,51 +107,71 @@ Profil
 
 </ul>
 
-<a class="logout" href="logout.php">
+<a href="logout.php" class="logout">
+
 <i class="fa-solid fa-right-from-bracket"></i>
+
 Logout
+
 </a>
 
 </aside>
-<main class="content">
+
+<!-- MAIN -->
+
+<main class="main">
+
+<div class="topbar">
+
+<h2>Riwayat</h2>
+
+<div class="user">
+
+<img src="<?= $foto ?>">
+
+<?= $nama ?>
+
+</div>
+
+</div>
+
+<div class="welcome">
 
 <h1>Riwayat Perjalanan</h1>
 
 <p>Daftar seluruh perjalanan yang pernah Anda lakukan.</p>
 
+</div>
+
 <div class="history-list">
 
-<?php
+<?php if(mysqli_num_rows($history)>0){ ?>
 
-if(mysqli_num_rows($history)>0){
-
-while($row=mysqli_fetch_assoc($history)){
-
-?>
+<?php while($row=mysqli_fetch_assoc($history)){ ?>
 
 <div class="history-card">
 
 <div class="left">
 
-<h2><?= $row['kapal'] ?></h2>
+<h2><?= $row['kapal']; ?></h2>
 
 <p>
 
-<?= $row['asal'] ?>
+<?= $row['asal']; ?>
 
 <i class="fa-solid fa-arrow-right"></i>
 
-<?= $row['tujuan'] ?>
+<?= $row['tujuan']; ?>
 
 </p>
 
 <span>
 
-<?= $row['tanggal'] ?>
+<?= $row['tanggal']; ?>
 
 |
 
-<?= $row['jam_berangkat'] ?>
+<?= $row['jam_berangkat']; ?>
 
 </span>
 
@@ -158,17 +181,19 @@ while($row=mysqli_fetch_assoc($history)){
 
 <h3>
 
-Rp <?= number_format($row['total'],0,",",".") ?>
+Rp <?= number_format($row['total'],0,",","."); ?>
 
 </h3>
 
 <span class="status">
 
-<?= $row['status'] ?>
+<?= $row['status']; ?>
 
 </span>
 
-<a href="e-tiket.php?id=<?= $row['id'] ?>">
+<br>
+
+<a href="e-tiket.php?id=<?= $row['id']; ?>" class="btn-ticket">
 
 Lihat Tiket
 
@@ -178,13 +203,9 @@ Lihat Tiket
 
 </div>
 
-<?php
+<?php } ?>
 
-}
-
-}else{
-
-?>
+<?php } else { ?>
 
 <div class="empty">
 

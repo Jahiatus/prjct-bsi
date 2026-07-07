@@ -44,7 +44,7 @@ ORDER BY id DESC
 
     <title>Tiket Saya</title>
 
-    <link rel="stylesheet" href="../css/tiket.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -89,7 +89,7 @@ ORDER BY id DESC
                 <li>
                     <a href="booking.php">
                         <i class="fa-solid fa-ticket"></i>
-                        Booking
+                        Cek Booking
                     </a>
                 </li>
 
@@ -110,7 +110,7 @@ ORDER BY id DESC
                 <li>
                     <a href="profile.php">
                         <i class="fa-solid fa-user"></i>
-                        Profil
+                        Profile
                     </a>
                 </li>
 
@@ -144,7 +144,7 @@ ORDER BY id DESC
 
             </div>
 
-            <div class="page-title">
+            <div class="welcome">
 
                 <h1>Tiket Saya</h1>
 
