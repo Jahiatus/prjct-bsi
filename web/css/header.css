@@ -149,6 +149,17 @@ body {
     gap: 12px;
 }
 
+/* Login Link */
+.login-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.login-link:hover .user-name {
+    color: var(--secondary-color);
+}
+
 .user-name {
     font-size: 14px;
     font-weight: 600;

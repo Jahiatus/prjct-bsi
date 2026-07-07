@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Tentang Ombak Biru</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/about.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="about-section">
+      <h1>Tentang Ombak Biru</h1>
+    </section>
+
+    <section class="container">
+      <img src="../img/pelni.jpg" alt="Kapal Pelni" />
+
+      <div class="content">
+        <h1>Eksplorasi Laut Nusantara.</h1>
+
+        <p>
+          Pesan tiket feri dan pengiriman logistik dengan aman, cepat, dan
+          transparan bersama Ombak Biru.
+        </p>
+
+        <a href="../form/homepage.php" class="btn"> Lihat Info Jadwal </a>
+      </div>
+    </section>
+
+    <section class="why-us">
+      <div class="why-container">
+        <div class="why-us-content">
+          <h1>Mengapa Memilih Ombak Biru?</h1>
+
+          <a href="../form/homepage.php" class="btn"> Pesan Tiket </a>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <i class="fa-solid fa-ship"></i>
+
+            <h2>Berpengalaman</h2>
+
+            <p>Memberikan layanan perjalanan laut dengan standar terbaik.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h2>Aman</h2>
+
+            <p>Keselamatan dan kenyamanan pelanggan menjadi prioritas utama.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-route"></i>
+
+            <h2>Jangkauan Luas</h2>
+
+            <p>Menghubungkan berbagai wilayah Indonesia melalui jalur laut.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <img src="../img/pelni.jpg" alt="Kapal" />
+
+      <div class="content">
+        <h1>Mengenal Ombak Biru</h1>
+
+        <p>
+          Ombak Biru merupakan layanan transportasi laut yang hadir untuk
+          memberikan kemudahan perjalanan dan pengiriman logistik antar wilayah
+          Indonesia.
+        </p>
+
+        <p>
+          Kami berkomitmen memberikan layanan yang aman, nyaman, terpercaya
+          serta mendukung konektivitas laut Nusantara.
+        </p>
+
+        <a href="../form/homepage.php" class="btn"> Lihat Info Jadwal </a>
+      </div>
+    </section>
+
+    <!-- Script -->
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+
+      window.addEventListener("scroll", () => {
+        reveals.forEach((el) => {
+          let top = el.getBoundingClientRect().top;
+
+          if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

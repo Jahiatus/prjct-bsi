@@ -1,33 +1,31 @@
-<h2>
-Pembayaran
-</h2>
+<?php
+include "../../database/koneksi.php";
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+</head>
 
-Total :
+<body>
 
-<b>
-Rp150.000
-</b>
+<div class="checkout">
+    <h2>Pembayaran</h2>
 
+    <p>Total :</p>
 
-<br><br>
+    <h3>Rp150.000</h3>
 
+    <select>
+        <option>Transfer Bank</option>
+        <option>QRIS</option>
+    </select>
 
-<select>
+    <br><br>
 
-<option>
-Transfer Bank
-</option>
+    <button>Bayar</button>
+</div>
 
-<option>
-QRIS
-</option>
-
-</select>
-
-
-<br>
-
-<button>
-Bayar
-</button>
+</body>
+</html>
