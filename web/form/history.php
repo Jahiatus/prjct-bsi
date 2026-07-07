@@ -78,7 +78,7 @@ Dashboard
 </li>
 
 <li>
-<a href="booking.php">
+<a href="cekbooking.php">
 <i class="fa-solid fa-ticket"></i>
 Cek Booking
 </a>
@@ -101,7 +101,7 @@ Riwayat
 <li>
 <a href="profile.php">
 <i class="fa-solid fa-user"></i>
-Profil
+Profile
 </a>
 </li>
 

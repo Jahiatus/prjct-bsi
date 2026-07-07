@@ -87,7 +87,7 @@ ORDER BY id DESC
                 </li>
 
                 <li>
-                    <a href="booking.php">
+                    <a href="cekbooking.php">
                         <i class="fa-solid fa-ticket"></i>
                         Cek Booking
                     </a>

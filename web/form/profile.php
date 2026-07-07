@@ -107,7 +107,7 @@ $nama=$user['nama_depan']." ".$user['nama_belakang'];
         </li>
 
         <li>
-            <a href="booking.php">
+            <a href="cekbooking.php">
                 <i class="fa-solid fa-ticket"></i>
                 Cek Booking
             </a>
