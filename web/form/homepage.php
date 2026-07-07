@@ -169,7 +169,7 @@ if (!isset($_SESSION['user_id'])) {
 
               <h3>Cashback Pengiriman Logistik</h3>
 
-              <p>Kirim barang lebih hemat dengan cashback hingga Rp50.000.</p>
+              <p>Kirim barang lebih hemat dengan cashback hingga Rp1.500.000.</p>
             </div>
           </div>
 
@@ -182,7 +182,7 @@ if (!isset($_SESSION['user_id'])) {
               <h3>Upgrade Eksekutif Voyage</h3>
 
               <p>
-                Gunakan poin SeaLink untuk upgrade gratis ke kelas Eksekutif.
+                Gunakan poin Ombak Biru untuk upgrade gratis ke kelas Eksekutif.
               </p>
             </div>
           </div>
@@ -273,26 +273,6 @@ function cekLogin(){
 <?php } ?>
 
 }
-</script>
-</script>
-function cekLogin(){
-
-    <?php if(isset($_SESSION['user_id'])){ ?>
-
-        window.location="jadwal.php";
-
-
-    <?php }else{ ?>
-
-
-        window.location="login.php";
-
-
-    <?php } ?>
-
-
-}
-
 </script>
 
 

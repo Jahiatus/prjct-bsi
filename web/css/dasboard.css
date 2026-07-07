@@ -276,9 +276,6 @@ body {
   }
 }
 
-/* ==========================
-   STATISTIK
-========================== */
 
 .stats{
     display:grid;
@@ -312,10 +309,6 @@ body {
     font-size:15px;
 }
 
-
-/* ==========================
-   PERJALANAN TERAKHIR
-========================== */
 
 .last-ticket{
     background:#fff;
@@ -353,10 +346,6 @@ body {
     color:#2e73e5;
 }
 
-
-/* ==========================
-   RESPONSIVE
-========================== */
 
 @media(max-width:900px){
 
